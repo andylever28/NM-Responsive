@@ -16,6 +16,7 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/canvas.css">
     <!-- endbuild -->
     
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -96,17 +97,21 @@
 			<!-- canvas content -->
 			<div class="row"> 
 				<div class="col-xs-12">
-					<div id="nmCanvasContainer">
-						<div id="nmCanvasHeadline">
-							<h4> <a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094">House Intel Committee Cancels Meetings Amid Uproar Over Russia</a> </h4>
+					<div class="row row-eq-height">
+						<div class="col-sm-5">
+							<div id="nmCanvasPhoto">
+								<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"><img class="img-responsive center-block" src="http://www.fillmurray.com/350/500"/> </a> 
+							</div>
 						</div>
-						<div id="nmCanvasPhoto">
-							<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"><img src="http://www.fillmurray.com/300/200" style="width: 75%;"/> </a> 
-						</div>
-						
-				 <!-- Need to determine if we want to keep this for mobile -->
-						<div id="breaking-news-snippet"> The House Intelligence Committee has canceled its upcoming meetings as partisan uproar grows over its investigation into ties between Russia and the Trump campaign, CNN reported Tuesday.
-							<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>	
+						<div class="col-sm-7">
+							<div id="nmCanvasContainer">
+								<div id="nmCanvasHeadline">
+									<h4> <a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094">House Intel Committee Cancels Meetings Amid Uproar Over Russia</a> </h4>
+								</div>
+								<div id="nmCanvasSummary" class="hidden-xs"> The House Intelligence Committee has canceled its upcoming meetings as partisan uproar grows over its investigation into ties between Russia and the Trump campaign, CNN reported Tuesday.
+									<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>	
+								</div>
+							</div>	
 						</div>
 					</div>
 				</div>
