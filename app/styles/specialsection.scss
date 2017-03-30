@@ -1,0 +1,62 @@
+$serif: Georgia,'Times New Roman',Times,Serif;
+$sans-serif: Helvetica, Arial, Sans-serif;
+$border-size: 6px solid;
+$newsmax-primary: #295AAB;
+$newsmax-secondary: #c32620;
+
+
+.nmSectionHead {
+	margin-bottom: 20px;
+	background-color: $newsmax-primary;
+	a {
+	font-family: $sans-serif;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px;
+	}
+}
+
+.nmSpecialHeadLabel {
+	background-color: #C4321E;
+}
+
+.nmSpecialSectionHeadline h2 {
+	font-size: 24px;
+	margin-top: 0px;
+}
+
+.nmSpecialLinks {
+	padding-left: 0px;
+	margin-left: 16px;
+	list-style-type: square;
+	color: $newsmax-secondary;
+	li {
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+}
+// Medium devices 
+@media (min-width: 768px) {
+	#nmSpecialSectionThumb {
+		border-left: $border-size $newsmax-secondary;
+	}
+}
+
+// Large devices 
+@media (min-width: 992px) { 
+	.nmSectionHead a {
+		font-size: 22px;
+	}
+	
+	.nmSpecialLinks li a {
+		font-family: $sans-serif;
+		font-size: 15px;
+	}
+	
+	
+ }
+
+// Extra large devices 
+@media (min-width: 1200px) {  }
+

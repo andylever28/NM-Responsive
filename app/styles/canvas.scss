@@ -1,20 +1,18 @@
-/* variables */
-
-$font-stack: Georgia,'Times New Roman',Times,Serif;
-$left-border: 6px solid #c32620;
-$primary-color: #c32620;
-
+$serif: Georgia,'Times New Roman',Times,Serif;
+$sans-serif: Helvetica, Arial, Sans-serif;
+$border-size: 6px solid;
+$newsmax-primary: #295AAB;
+$newsmax-secondary: #c32620;
 #nmCanvasPhoto {
 	margin-top: 20px;
 }
 
-#nmCanvasContainer {
-	font-family: $font-stack;
+
 	
-	#nmCanvasSummary a {
-		color: $primary-color;
+#nmCanvasSummary a {
+		color: $newsmax-secondary;
 	}
-}
+
 #nmCanvasHeadline{
 	text-align: left;
 	margin-top: 20px;
@@ -31,11 +29,12 @@ $primary-color: #c32620;
 @media (min-width: 768px) {
 	
 	#nmCanvasPhoto{
-		border-left: $left-border;
+		border-left: $border-size $newsmax-secondary;
 	}
 	
 	#nmCanvasHeadline h4 a {
 		font-size: 30px;
+		font-weight: bold;
 	}
 }
 
