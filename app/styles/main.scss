@@ -9,7 +9,10 @@ $sans-serif: Helvetica, Arial, Sans-serif;
 $border-size: 6px solid;
 $newsmax-primary: #295AAB;
 $newsmax-secondary: #c32620;
-
+$spacer-line: 1px solid #dfdfe7;
+$world-color: #AA65AA;
+$finance-color: #EBA100;
+$health-color: #57A1B1;
 
 /* main CSS */
 body {
@@ -18,13 +21,18 @@ body {
 	font-family: $serif;
 }
 
-#nmLeftColumn {
+#nmLeftColumn,
+#nmRightColumn {
 	margin-top: 23px;
 }
 
+#nmRightColumn {
+    padding-top: 21px;
+}
+
+
 .nmMoreSection {
-	border-top: 1px solid #dfdfe7;
-	margin: 10px 0 20px 0;
+	margin: 10px 0 0px 0;
 	padding-top: 10px;
 	
 	a {
@@ -34,6 +42,17 @@ body {
 		font-family: $sans-serif;
 		padding: 10px;
 	}
+}
+
+.nothumb {
+    border-top: $spacer-line;
+}
+/* allows columns in rows to be set equal*/
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }
 
 .browserupgrade {

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8">
@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/variables.css">
 	<link rel="stylesheet" href="styles/canvas.css">
-		<link rel="stylesheet" href="styles/specialsection.css">
+    <link rel="stylesheet" href="styles/specialsection.css">
+    <link rel="stylesheet" href="styles/newsfront.css">
+	<link rel="stylesheet" href="styles/rightrail.css">
     
 
     <!-- endbuild -->
@@ -121,47 +123,8 @@
 				</div>
 			</div> <!-- end canvas content --> 
 			
-			<div class="row" id="nmLeftColumn"> <!-- Left Column --> 
-				<div class="col-md-8"> <!-- left column for md screen/top half of content stream on mobile -->
-					<!-- <div class="row">
-						<div class="col-xs-12">
-							<div class="nmSpecialHead"> 
-									<div class="nmSpecialHeadL"> </div> 
-									<div class="nmSpecialHeadLabel">
-										<a href="#" class="nmSpecialHeadLink">The Obamacare Vote</a>									
-									</div>
-									<div class="nmSpecialHeadR"> </div>
-								</div>
-						</div>
-					</div> -->
-					<!-- <div class="row">
-						<div class="col-xs-9">
-							<div id="nmSpecialCovCont">
-								<div class="nmSpecialSectionHeadline">
-									<h2> DeLay: Trump's 'Rookie Idea' to Work With Dems Won't End Well </h2> 
-								</div>
-								<div class="nmSpecialContent">
-									<ul class="nmSpecialLinks"> 
-										<li> Test Links </li>
-										<li> Test Links </li>
-										<li> Test Links </li>
-										<li> Test Links </li>
-										<li> Test Links </li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-3">
-							<div id="nmSpecialSectionThumb">
-								<img src="http://www.fillmurray.com/300/400" class="img-responsive"/>
-							</div>
-						</div>
-						<div class="col-xs-12">
-							<div class="nmMoreSection">
-								More The Obamacare Vote 
-							</div>
-						</div>
-					</div> -->
+			<div class="row" id="nmContentContainer"> <!-- Left Column --> 
+				<div class="col-md-8" id="nmLeftColumn">
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="nmSpecialHead nmSectionHead"> 
@@ -174,19 +137,17 @@
 						</div>
 					</div>
 				
-					<div class="row">
+					<div class="row nmSpecialSection">
 						<div class="col-xs-3">
 							<div id="nmSpecialSectionThumb">
 								<img src="http://www.fillmurray.com/300/500" class="img-responsive"/>
 							</div>
 						</div>
 						<div class="col-xs-9">
-							<div id="nmSpecialCovCont">
-								<div class="nmSpecialSectionHeadline">
-									<h2> Trump Tweets: Why Not Investigate Clinton's Russia Ties? </h2> 
-								</div>
-							</div> 
+							<div class="nmSpecialSectionHeadline">
+								<h2>Pence Casts Tiebreaker to Reverse Obama Rule on Womens Healthcare </h2> 
 							</div>
+						</div>
 							<div class="col-xs-12 col-sm-9">
 								<div class="nmSpecialContent">
 									<ul class="nmSpecialLinks"> 
@@ -208,7 +169,7 @@
 
 						
 						<div class="col-xs-12">
-							<div class="nmMoreSection">
+							<div class="nmMoreSection nothumb">
 								<a href="#"> More Trump: The First 100 Days </a>
 							</div>
 						</div>
@@ -225,9 +186,9 @@
 						</div>
 					</div>
 					<!-- Lead story --> 
-					<div class="row">
+					<div class="row nmNewsfrontLead">
 						<div class="col-xs-4">
-							<div id="nmLeadStoryThumb">
+							<div class="nmLeadStoryThumb">
 								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
 							</div>
 						</div>
@@ -235,7 +196,7 @@
 							<div class="nmLeadStoryHead">
 								<h2> British PM May Formally Triggers Brexit </h2>
 							</div>
-							<div class="nmLeadStorySummary"> <!-- Summary will not display on Mobile -->
+							<div class="nmLeadStorySummary hidden-xs"> <!-- Summary will not display on Mobile -->
 								 British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union.... 
 							</div>
 						</div>
@@ -244,7 +205,7 @@
 					<div class="row nmNewsfrontStory">
 						<div class="col-xs-3">
 							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
+								<img src="http://www.fillmurray.com/300/300" class="img-responsive"/>
 							</div> 
 						</div>
 						<div class="col-xs-9">
@@ -252,7 +213,7 @@
 								<div class="nmNewsfrontHead">
 									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
 								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
+								<div class="nmNewsfrontSummary hidden-xs"> <!-- Summary Will not display on Mobile -->
 									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
 								</div>
 							</div>
@@ -267,92 +228,89 @@
 						<div class="col-xs-9">
 							<div class="nmNewsfrontT">
 								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+									<h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
 								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
+								<div class="nmNewsfrontSummary hidden-xs"> <!-- Summary Will not display on Mobile -->
 									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="nmMoreSection">
-								More Newsfront
-							</div>
-						</div>
-					</div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.placecage.com/300/300" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.placecage.com/300/200" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.stevensegallery.com/300/300" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.stevensegallery.com/300/200" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 					<!-- End Newsfront Section --> 
-					
-					<div class="row"> <!-- Start Newsmax TV Section -->
+                    <!-- Start Newsmax TV Section -->
+					<div class="row"> 
 						<div class="col-xs-12">
 							<div class="nmSectionHead"> 
 								<div class="nmSectionHeadL"> </div>
@@ -379,64 +337,114 @@
 							</div>
 						</div>
 					</div>
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="nmMoreSection">
-								More Newsmax TV
-							</div>
-						</div>
-					</div>		
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.fillmurray.com/300/300" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.placecage.com/300/300" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.placecage.com/300/200" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.stevensegallery.com/300/300" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row nmNewsfrontStory">
+                        <div class="col-xs-3">
+                            <div class="nmNewsfrontThumb">
+                                <img src="http://www.stevensegallery.com/300/200" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="nmNewsfrontT">
+                                <div class="nmNewsfrontHead">
+                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+                                </div>
+                                <div class="nmNewsfrontSummary hidden-xs">
+                                    <!-- Summary Will not display on Mobile -->
+                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 					<!-- End Newsmax TV --> 
 					<!-- Start America Section --> 
 					<div class="row"> 
@@ -463,9 +471,9 @@
 				
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="nmMoreSection">
-								More America 
-							</div>
+							<div class="nmMoreSection nothumb">
+                                <a href="#">More America </a>
+                            </div>
 						</div>
 					</div>	<!-- end of America Section -->
 					<!-- Start Politics Section -->
@@ -493,16 +501,16 @@
 				
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="nmMoreSection">
-								More Politics 
-							</div>
+							<div class="nmMoreSection nothumb">
+                                <a href="#"> More Politics </a>
+                            </div>
 						</div>
 					</div>	<!--End Politics Section -->
 					
 					<!-- Start World Section -->
 					<div class="row"> 
 						<div class="col-xs-12">
-							<div class="nmSectionHead nmWorld"> 
+							<div class="nmSectionHead" id="nmWorldLabel"> 
 								<div class="nmSectionHeadL"> </div>
 								<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">World</a> </div>
 								<div class="nmSectionHeadR"> </div>
@@ -524,16 +532,16 @@
 				
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="nmMoreSection">
-								More World
-							</div>
+							<div class="nmMoreSection nothumb">
+                                <a href="#"> More World </a>
+                            </div>
 						</div>
 					</div>	<!-- End World --> 
 					
 					<!-- Start Finance -->
 					<div class="row"> 
 						<div class="col-xs-12">
-							<div class="nmSectionHead nmFinance"> 
+							<div class="nmSectionHead" id="nmFinanceLabel"> 
 								<div class="nmSectionHeadL"> </div>
 								<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Finance</a> </div>
 								<div class="nmSectionHeadR"> </div>
@@ -541,23 +549,22 @@
 						</div>
 					</div>
 					
-					<div class="row nmSectionLead">
-						<div class="col-xs-3">
-							<div class="nmSectionThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmSectionT">
-								<div class="nmSectionHeadline">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmSectionSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
+                    <div class="row nmNewsfrontLead">
+                        <div class="col-xs-4">
+                            <div class="nmLeadStoryThumb financeThumb">
+                                <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="nmLeadStoryHead">
+                                <h2> Finance and some others lead story is larger - this is header </h2>
+                            </div>
+                            <div class="nmLeadStorySummary hidden-xs">
+                                <!-- Summary will not display on Mobile -->
+                                British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union....<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>
+                            </div>
+                        </div>
+                    </div> 
 					
 					<div class="row"> 
 						<div class="col-xs-12">
@@ -574,15 +581,70 @@
 				
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="nmMoreSection">
-								More Finance 
-							</div>
+							<div class="nmMoreSection nothumb">
+                                <a href="#">More Finance </a>
+                            </div>
 						</div>
 					</div>	
+                <!-- end finance -->
+                <!-- Start Health -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="nmSectionHead" id="nmHealthLabel">
+                                <div class="nmSectionHeadL"> </div>
+                                <div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Health</a> </div>
+                                <div class="nmSectionHeadR"> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row nmNewsfrontLead">
+                        <div class="col-xs-4">
+                            <div class="nmLeadStoryThumb healthThumb">
+                                <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="nmLeadStoryHead">
+                                <h2> Health and some others lead story is larger - this is header </h2>
+                            </div>
+                            <div class="nmLeadStorySummary hidden-xs">
+                                <!-- Summary will not display on Mobile -->
+                                British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union... <a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="nmSectionLinks">
+                                <ul class="nmSectionLinks">
+                                    <li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
+                                    <li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
+                                    <li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="nmMoreSection nothumb">
+                                <a href="#">More Health </a>
+                            </div>
+                        </div>
+                    </div>	
 				</div> <!-- end left column -->
-				
-				<div class="col-md-4"> <!-- right column for md screen / bottom half of content  -->
-					This is the content for the right column 
+                				
+				<div class="col-md-4" id="nmRightColumn"> <!-- right column for md screen / bottom half of content  -->
+				    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="DFP">
+                                <img src="http://www.placehold.it/300x250" />
+                            </div>
+                        </div>
+                    </div>
 				</div> <!-- end right column -->
 				
 			</div>

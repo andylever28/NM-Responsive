@@ -1,6 +1,4 @@
-/* variables */
-
-$serif: Georgia,'Times New Roman',Times,Serif;
+﻿$serif: Georgia,'Times New Roman',Times,Serif;
 $sans-serif: Helvetica, Arial, Sans-serif;
 $border-size: 6px solid;
 $newsmax-primary: #295AAB;
@@ -9,3 +7,12 @@ $spacer-line: 1px solid #dfdfe7;
 $world-color: #AA65AA;
 $finance-color: #EBA100;
 $health-color: #57A1B1;
+
+.DFP {
+    margin: 0 0 30px 0;
+    
+    img {   
+            display: block;
+            margin: 0 auto;
+        }
+}

@@ -1,0 +1,87 @@
+﻿$serif: Georgia,'Times New Roman',Times,Serif;
+$sans-serif: Helvetica, Arial, Sans-serif;
+$border-size: 6px solid;
+$newsmax-primary: #295AAB;
+$newsmax-secondary: #c32620;
+$spacer-line: 1px solid #dfdfe7;
+$world-color: #AA65AA;
+$finance-color: #EBA100;
+$health-color: #57A1B1;
+
+
+.nmLeadStoryHead {
+    h2 {
+          margin: 0px;
+          font-size:28px;
+      }
+}
+
+.nmNewsfrontHead {
+    h2 {
+           margin: 0px;
+           font-size:20px;
+       }
+}
+
+.nmNewsfrontLead,
+.nmNewsfrontStory {
+   border-bottom: $spacer-line;
+   padding: 15px 0;   
+}
+
+.nmNewsfrontSummary,
+.nmLeadStorySummary {
+    a {
+      color: $newsmax-secondary;
+
+    }
+}
+
+.nmSectionLinks {
+    color: $newsmax-secondary;
+    list-style-type: square;
+    font-size: 16px;
+    margin-top: 10px;
+    li {
+           margin-bottom: 10px;
+        a {
+          color: black;
+       
+        }
+    } 
+
+}
+
+#nmFinanceLabel {
+    background-color: $finance-color;
+}
+
+#nmWorldLabel {
+    background-color: $world-color;
+}
+
+#nmHealthLabel {
+    background-color: $health-color;
+}
+.smallLead {
+    width: 150%;
+}
+/* Medium */
+@media (min-width: 768px) {
+    .nmLeadStoryThumb,
+    .nmNewsfrontThumb {
+        border-left: $border-size $newsmax-secondary;
+    }
+
+    .nmSectionLinks {
+        font-size: 20px;
+    }
+
+    .financeThumb {
+        border-left: $border-size $finance-color;
+    }
+
+    .healthThumb {
+        border-left: $border-size $health-color;
+    }
+}
