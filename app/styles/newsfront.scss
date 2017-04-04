@@ -27,15 +27,28 @@ $health-color: #57A1B1;
 .nmNewsfrontStory {
    border-bottom: $spacer-line;
    padding: 15px 0;   
+   margin: 0 1px;
+
+   div {
+       padding-left: 0px;
+   }
+}
+
+.nmNewsfrontSummary {
+    color: #666666;
 }
 
 .nmNewsfrontSummary,
 .nmLeadStorySummary {
     a {
-      color: $newsmax-secondary;
+      color: $newsmax-secondary
+    }
 
+    div {
+        padding: 0px;
     }
 }
+
 
 .nmSectionLinks {
     color: $newsmax-secondary;

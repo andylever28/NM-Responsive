@@ -9,63 +9,59 @@ $finance-color: #EBA100;
 $health-color: #57A1B1;
 
 .nmSectionHead {
-	margin-top: 20px;
-	background-color: $newsmax-primary;
-	a {
-	font-family: $sans-serif;
-	color: white;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 10px;
-	}
+    margin-top: 20px;
+    background-color: $newsmax-primary;
 
-.nmSpecialHeadLabel {
-	background-color: #C4321E;
-}
-
-.nmSpecialSectionHeadline h2 {
-	font-size: 24px;
-	margin-top: 0px;
-}
-
-.nmSpecialLinks {
-	padding-left: 0px;
-	margin-left: 16px;
-	list-style-type: square;
-	color: $newsmax-secondary;
-	li {
-		margin-bottom: 10px;
-		font-size: 20px;
-        a {
-            color: black;
-        }
-	}
-}
-
-.nmSpecialSection {
-    margin-top: 15px;
-}
-// Medium devices 
-@media (min-width: 768px) {
-	#nmSpecialSectionThumb {
-		border-left: $border-size $newsmax-secondary;
-	}
-}
-
-// Large devices 
-@media (min-width: 992px) { 
-	.nmSectionHead a {
-		font-size: 22px;
-	}
-	
-	.nmSpecialLinks li a {
-		font-family: $sans-serif;
-		font-size: 15px;
-	}
-	
-	
+    a {
+        font-family: $sans-serif;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+    }
  }
 
-// Extra large devices 
-@media (min-width: 1200px) {  }
+    .nmSpecialHeadLabel {
+        background-color: #C4321E;
+    }
 
+    .nmSpecialSectionHeadline h2 {
+        font-size: 24px;
+        margin-top: 0px;
+    }
+
+    .nmSpecialLinks {
+        padding-left: 0px;
+        margin-left: 16px;
+        list-style-type: square;
+        color: $newsmax-secondary;
+
+        li {
+            font-size: 18px;
+
+            a {
+                color: black;
+            }
+        }
+    }
+
+    .nmSpecialSection {
+        margin-top: 15px;
+    }
+    // Medium devices
+    @media (min-width: 768px) {
+        #nmSpecialSectionThumb {
+            border-left: $border-size $newsmax-secondary;
+        }
+    }
+    // Large devices
+    @media (min-width: 992px) {
+        .nmSectionHead a {
+            font-size: 22px;
+        }
+
+        .nmSpecialLinks li a {
+            font-family: $sans-serif;
+            font-size: 15px;
+        }
+    }

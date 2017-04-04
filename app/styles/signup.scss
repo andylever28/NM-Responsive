@@ -1,0 +1,79 @@
+﻿$serif: Georgia,'Times New Roman',Times,Serif;
+$sans-serif: Helvetica, Arial, Sans-serif;
+$border-size: 6px solid;
+$newsmax-primary: #295AAB;
+$newsmax-secondary: #c32620;
+$spacer-line: 1px solid #dfdfe7;
+$world-color: #AA65AA;
+$finance-color: #EBA100;
+$health-color: #57A1B1;
+$module-color: #8EBFE0;
+
+.signupFormWrapper {
+    margin: 0px;
+    padding: 10px 0;
+    border: 2px solid #295aab;
+    .form-control {
+        border-radius: 0px;
+        height: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+    label {
+        padding-right: 0px;
+        font-size: 11px;
+        font-weight: bold;
+        color: #646464;
+        text-align: right;
+        margin-top: 8px;
+    }
+
+    button {
+        border-radius: 0px;
+        height: 30px;
+        padding: 0 6px;
+        font-family: $sans-serif;
+        background-color: $newsmax-secondary;
+    }
+
+    .submitButton {
+        padding-left: 0px;
+        text-align: right;
+    }
+
+    .formPrivacyStatement {
+        text-align: center;
+        color: black;
+        font-size: 11px;
+        font-weight: bold;
+    }
+}
+
+/* Large devices */
+    @media (min-width: 992px){
+
+.signupFormWrapper {
+        .form-group {
+            padding: 0px;
+        }
+        .nmSignUpButtonCont {
+            margin-top: 0px;
+            input {
+                width: 60px; 
+                text-align: left;
+                margin: 0px;
+            }
+        }
+
+        .nmSignUpLabel {
+            padding: 0px;
+        }
+
+        button {
+        text-align: left;
+        font-size: 11px;
+    }
+    }
+}
