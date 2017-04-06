@@ -1,0 +1,66 @@
+﻿$serif: Georgia,'Times New Roman',Times,Serif;
+$sans-serif: Helvetica, Arial, Sans-serif;
+$border-size: 6px solid;
+$newsmax-primary: #295AAB;
+$newsmax-secondary: #c32620;
+$spacer-line: 1px solid #dfdfe7;
+$world-color: #AA65AA;
+$finance-color: #EBA100;
+$health-color: #57A1B1;
+$module-color: #8EBFE0;
+
+.nmSocialCont {
+
+    border-bottom: $spacer-line;
+.nmSocial {
+    padding: 20px 0px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    border-right: $spacer-line;
+
+    .likeFollow {
+            font-style: italic;
+            font-weight: normal;
+            }
+}
+
+.socialBordernone {
+    border-right: none;
+}
+
+}
+
+.twitterNetwork {
+    p {
+          font-size: 15px;
+          margin: 0px;
+      }
+    a {
+        font-size: 12px;
+        font-family: $sans-serif;
+        color: #2058ad;
+        font-weight: bold;
+    }
+}
+
+.sponsors {
+    margin: 12px 0 20px 0;
+    list-style-type: none;
+    padding: 0px;
+
+    li {
+           padding: 0 0 0 10px;
+           margin-bottom: 18px;
+           
+          a {
+           color: #000;
+           font-size: 14px;
+           }
+          span {
+              color: $newsmax-secondary;
+              margin-right: 10px;
+              height: 100%;
+          } 
+       }
+}

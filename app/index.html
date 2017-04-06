@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="styles/specialsection.css">
     <link rel="stylesheet" href="styles/newsfront.css">
     <link rel="stylesheet" href="styles/insiderinfo.css">
-	<link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="styles/signup.css">
+	<link rel="stylesheet" href="styles/social.css">
     
 
     <!-- endbuild -->
@@ -35,6 +36,16 @@
     <!-- endbuild -->
   </head>
   <body>
+
+      <div id="fb-root"></div>
+      <script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=725329820958847";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -631,16 +642,17 @@
                     </div>	
 				</div> <!-- end left column -->
                 				
-				<div class="col-md-4" id="nmRightColumn"> <!-- right column for md screen / bottom half of content  -->
-				    <div class="row">
+                <div class="col-md-4" id="nmRightColumn">
+                    <!-- right column for md screen / bottom half of content  -->
+                    <div class="row">
                         <div class="col-xs-12">
                             <div class="DFP">
                                 <img src="http://www.placehold.it/300x250" />
                             </div>
                         </div>
                     </div>
-                <!-- Correspondents -->
-                    <div class="row"> 
+                    <!-- Correspondents -->
+                    <div class="row">
                         <div class="col-xs-12">
                             <div class="nmModuleHead nmSectionHead">
                                 <div class="nmModuleHeadL"> </div>
@@ -666,7 +678,7 @@
                             </div>
                         </div>
                     </div>
-                <!-- Insiders -->
+                    <!-- Insiders -->
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="nmModuleHead nmSectionHead">
@@ -747,7 +759,7 @@
 
                                     </div>
                                     <div class="nmInsiderTitle">
-                                        Left Coast Report 
+                                        Left Coast Report
                                     </div>
                                     <div class="nmInsiderSummary">
                                         <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">Left-leaning Scarlett Johansson Accused of 'Whitewashing' Is Ironic</a>
@@ -780,8 +792,8 @@
                             <div class="nmMoreSection"> <a href="#"> All Insiders </a> </div>
                         </div>
                     </div>
-                <!-- End Insiders -->
-                <!-- Email Sign up Box -->
+                    <!-- End Insiders -->
+                    <!-- Email Sign up Box -->
                     <div class="row nmSignUpContainer">
                         <div class="col-sm-6 col-md-12">
                             <div class="nmSectionHead">
@@ -826,22 +838,99 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="DFP col-sm-6 visible-sm-block">
+                        <div class="DFP notTopDfp visible-sm-block">
                             <img src="http://www.placehold.it/300x250" />
                         </div>
                     </div><!--End Sign Up Box-->
                     <div class="row">
-                        <div class="col-xs-12">
-                            <div class="nmSectionHead">
-                                <div class="nmModuleHeadL"> </div>
-                                <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Follow Newsmax</a> </div>
-                                <div class="nmModuleHeadR"> </div>
+                        <div class="col-sm-6 col-md-12">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="nmSectionHead nmModuleHead">
+                                        <div class="nmModuleHeadL"> </div>
+                                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Follow Newsmax</a> </div>
+                                        <div class="nmModuleHeadR"> </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row nmSocialCont">
+                                <div class="col-xs-4 nmSocial">
+                                    <p> <span class="likeFollow">Like us </span> <br> on Facebook </p>
+                                    <!--Facebook Like Button -->    <div class="fb-like" data-href="https://www.facebook.com/newsmax/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true"></div>
+                                </div>
+                                <div class="col-xs-4 nmSocial">
+                                    <p>  <span class="likeFollow">Follow us </span> <br> on Twitter <br> </p>
+                                    <a class="twitter-follow-button" data-show-screen-name="false" data-show-count="false"
+                                       href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fwww.newsmax.com%2F&ref_src=twsrc%5Etfw&region=follow_link&screen_name=Newsmax&tw_p=followbutton">
+                                        Follow
+                                    </a>
+                                </div>
+                                <div class="col-xs-4 nmSocial socialBordernone">
+                                    <p> <span class="likeFollow"> Add us </span> <br> on Google Plus </p>
+                                    <div class="g-plusone" data-annotation="none" data-href="https://plus.google.com/+newsmax"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-12">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="nmSectionHead nmModuleHead">
+                                        <div class="nmModuleHeadL"> </div>
+                                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Twitter Network</a> </div>
+                                        <div class="nmModuleHeadR"> </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 twitterNetwork">
+                                    <p> Now 30 million followers and growing. </p>
+                                    <a href="http://www.newsmax.com/twitternetwork">Click here for more details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                        
+                    <div class="row">
+                        <div class="col-sm-6 col-md-12">
+                            <div class="row">
+                                <div class="col-xs-12 visible-sm-block">
+                                    <div class="DFP notTopDfp">
+                                        <img src="http://www.placehold.it/300x250" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="DFP notTopDfp">
+                                        <img src="http://www.placehold.it/300x250" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-12">
+                            <div class="nmSectionHead nmModuleHead">
+                                <div class="nmModuleHeadL"> </div>
+                                <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Around The Web </a> </div>
+                                <div class="nmModuleHeadR"> </div>
+                            </div>
+                            <div id="nmSponsorModule">
+                                <ul class="sponsors">
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Turmeric: 8 New Surprising Health Benefits </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#">The Amazing VA Benefits Not Enough Vets Are Claiming </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Doctors 2 Minute Hack To Lose 1 Pound Of Belly Fat </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> The $100 Trump Retirement Roadmap </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Kathie Lee Gifford’s New Career Away From Cameras </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> willie Robertson Agrees To Shave Off Famous Beard </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Your Data is Posted Online, Look Yourself Up Today </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Turmeric: 8 New Surprising Health Benefits </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#">The Amazing VA Benefits Not Enough Vets Are Claiming </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Doctors 2 Minute Hack To Lose 1 Pound Of Belly Fat </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> The $100 Trump Retirement Roadmap </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Kathie Lee Gifford’s New Career Away From Cameras </a></li>
+                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> willie Robertson Agrees To Shave Off Famous Beard </a></li>
+                                </ul>
 
-				</div> <!-- end right column -->
+                                <div class="whatsThis"> <a href="http://www.newsmax.com/advertise/?oRef=dlvr.it">Powered by Newsmax</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end right column -->
 				
 			</div>
 		</div> <!-- end container -->
@@ -897,7 +986,28 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
-    
+    <!-- Goog hangouts -->
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <!-- end Goog -->
+    <!-- Twitter Script -->
+      <script>
+window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+      <!-- end Twitter -->
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
