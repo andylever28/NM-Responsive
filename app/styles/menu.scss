@@ -1,0 +1,282 @@
+@import 'variables';
+@import 'mixins';
+@import 'scaffolding';
+
+
+nav.site-navbar {
+	position: absolute;
+	z-index: 1060;
+	background-color: $gray-dark;
+	width: 100%;
+	right: 0;
+	left: 0;
+	-webkit-transition: all linear 0.3s;
+	transition: all linear 0.3s;
+}
+
+nav.site-navbar.ng-hide {
+	opacity: 0;
+    display: none;
+}
+
+nav.site-navbar header {
+	background-color: $gray-light;
+	color: $white-base;
+	padding: 10px 0; 
+	border-top: 1px solid $gray-darker;
+	border-bottom: 1px solid $gray-darker;
+}
+
+nav.site-navbar footer {
+	background-color: $gray-light;
+	color: $gray-lighter-dark;
+	padding: 10px 0; 
+    margin-left: -15px;
+    margin-right: -15px;
+	border-top: 1px solid $gray-darker;
+	border-bottom: 1px solid $gray-darker;
+}
+
+nav.site-navbar footer a {
+	color: $white-base;
+}
+
+nav.site-navbar footer a:hover {
+    text-decoration: none;
+}
+
+nav.site-navbar ul {
+    list-style-type: none;
+	margin-left: 0;
+}
+
+nav.site-navbar ul li a {
+	display: block;
+}
+
+nav.site-navbar ul li a:hover {
+	text-decoration: none;
+}
+
+nav.site-navbar ul.nav-sites {
+	border-right: 1px solid $gray-darker;
+	background-color: $gray-light-dark;
+    font-weight: bold;
+}
+
+nav.site-navbar .nav-sites-external a {
+    color: $white-base;
+    text-decoration: none;
+}
+
+nav.site-navbar ul.nav-section {
+	border-left: 1px solid $gray-darker;
+}
+
+nav.site-navbar ul.nav-sites, nav.site-navbar ul.nav-section {
+	padding: 0;
+}
+
+nav.site-navbar ul.nav-section {
+	display: none;
+	margin-left: -2px;
+}
+
+nav.site-navbar ul.nav-section.active {
+	display: block;
+}
+
+nav.site-navbar ul.nav-section li a {
+	color: $white-base;
+}
+
+nav.site-navbar ul.nav-section.active li a {
+	color: $white-base;
+}
+
+nav.site-navbar ul.nav-sites li {
+	border-bottom: 1px solid $gray-darker;
+}
+
+nav.site-navbar ul.nav-section li  {
+	border-bottom: 1px solid $gray-darker;
+}
+
+nav.site-navbar ul.nav-sites li a {
+	padding: 14px;
+}
+
+nav.site-navbar ul.nav-section li a {
+	padding: 14px;
+}
+
+nav.site-navbar ul.nav-section.active a {
+	color: $white-base;
+}
+
+.nav-sites-title {
+	margin-left: 15px;
+}
+
+.nav-section-title {
+	margin-left: 10px;
+}
+
+.social-links {
+	padding: 10px;
+}
+
+.social-links a {
+    margin: 0 5px;
+	color: $white-base;
+}
+
+.sites-newsmax a {
+	color: $brand-primary;
+}
+
+.sites-newsmax.active a {
+	color: $white-base;
+	background-color: $brand-primary;
+}
+
+.sites-tv a {
+	color: $brand-tv;
+}
+
+.sites-tv.active a {
+	color: $white-base;
+	background-color: $brand-tv;
+}
+
+.sites-health a {
+	color: $brand-health;
+}
+
+.sites-health.active a {
+	color: $white-base;
+	background-color: $brand-health;
+}
+
+.sites-finance a {
+	color: $brand-money;
+}
+
+.sites-finance.active a {
+	color: $white-base;
+	background-color: $brand-money;
+}
+
+.sites-world a {
+	color: $brand-world;
+}
+
+.sites-world.active a {
+	color: $white-base;
+	background-color: $brand-world;
+}
+
+.section-newsmax {
+	background-color: $brand-primary;
+}
+
+.section-tv {
+	background-color: $brand-tv;
+}
+
+.section-health {
+	background-color: $brand-health;
+}
+
+.section-finance {
+	background-color: $brand-money;
+}
+
+.section-world {
+	background-color: $brand-world;
+}
+
+.breadcrumb {
+    display: none;
+    margin: 10px 0 0 0;
+    background-color: $brand-primary-light;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid $brand-primary;
+}
+
+.nav-tabs > li > a {
+    border-radius: 0;
+}
+
+.nav-tabs > li > a:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: $gray-base;
+    border: 1px solid $brand-primary;
+    border-bottom-color: transparent;
+}
+
+.tab-content {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.toggle-menu a, .toggle-menu a:hover {
+    color: $gray-base;
+}
+
+.toggle-menu .menu-descriptor {
+    font-size: .6em;
+}
+
+.toggle-menu .fa-times {
+    color: $brand-secondary;
+}
+
+.tv-menu a, .tv-menu a:hover {
+    color: $gray-base;
+    text-decoration: none;
+}
+
+.tv-menu .tv-descriptor {
+    font-size: .6em;
+}
+
+.center-block img {
+    width: 50%;
+    margin: 0 auto;
+}
+@media (min-width: $screen-sm) {
+	.toggle-menu .fa-bars, .toggle-menu .fa-times  {
+		font-size: 3em;
+	}
+
+	.toggle-menu .menu-descriptor {
+			font-size: .9em;
+	}
+
+	.tv-menu .tv-descriptor {
+			font-size: .9em;
+	}
+}
+
+.fa-facebook-square {
+    color: $brand-facebook;
+}
+
+.fa-twitter-square {
+    color: $brand-twitter;
+}
+
+.fa-google-plus-square {
+    color: $brand-google;
+}
+
+.fa-envelope-square, .social-share small {
+    color: $gray-lighter-dark;
+}

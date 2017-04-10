@@ -7,8 +7,25 @@ $spacer-line: 1px solid #dfdfe7;
 $world-color: #AA65AA;
 $finance-color: #EBA100;
 $health-color: #57A1B1;
-
-
+$module-color: #8EBFE0;
+$special-head-color: #C4321E;
+@mixin slant($border-color) {
+    float: left;
+    border: 30px solid $border-color; 
+    border-top: 30px solid #fff; 
+    border-right: 30px solid #fff; 
+    border-bottom: 0; 
+    height: 0; 
+    width: 0; 
+}
+@mixin head-style($color){
+    float: left;
+    background-color: $color;
+    color: #fff;
+    height:30px;
+    box-sizing:border-box;
+    padding: 5px;
+}
 .nmLeadStoryHead {
     h2 {
           margin: 0px;
@@ -66,19 +83,45 @@ $health-color: #57A1B1;
 }
 
 #nmFinanceLabel {
-    background-color: $finance-color;
-}
+    border-color: $finance-color;
 
+    .nmSectionHeadLabel{
+        background-color: $finance-color;
+    }
+}
 #nmWorldLabel {
-    background-color: $world-color;
+    border-color: $world-color;
+    
+    .nmSectionHeadLabel{
+        background-color: $world-color;
+    }
 }
-
 #nmHealthLabel {
-    background-color: $health-color;
+   border-color: $health-color;
+    
+    .nmSectionHeadLabel{
+        background-color: $health-color;
+    }
+}
+@media (min-width: 480px){
+
+  #nmFinanceLabel .nmSectionHeadR {
+    @include slant($finance-color)
+    }
+
+
+    #nmWorldLabel  .nmSectionHeadR {
+        @include slant($world-color)
+        }
+
+   #nmHealthLabel .nmSectionHeadR {
+        @include slant($health-color)
+    }
 }
 .smallLead {
     width: 150%;
 }
+
 /* Medium */
 @media (min-width: 768px) {
     .nmLeadStoryThumb,

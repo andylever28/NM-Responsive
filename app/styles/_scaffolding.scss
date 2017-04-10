@@ -1,0 +1,90 @@
+body {
+	font-family: $font-family-base;
+	color: $text-color;
+	font-size: $font-size-base;
+	line-height: normal;
+	overflow-x: hidden;
+}
+
+h1 { font-size: 22px; line-height: 24px; font-family: $font-family-serif;  }
+h2 { font-size: 20px; line-height: 24px; font-family: $font-family-serif;  }
+h3 { font-size: 18px; line-height: 24px; font-family: $font-family-serif;  }
+h4 { font-size: 16px; line-height: 20px; font-family: $font-family-serif;  }
+h5 { font-size: 14px; line-height: 20px; font-family: $font-family-serif; }
+h6 { font-size: 12px; line-height: 20px; font-family: $font-family-serif; }
+
+hr {
+	margin: 10px 0;
+}
+
+a {
+	color: $brand-primary;
+}
+
+a:hover,
+a:focus {
+    color: $brand-primary;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.no-left-padding {
+   padding-left: 0 !important;
+   margin-left: 0 !important;
+}
+
+.no-side-padding {
+   padding-left: 0 !important;
+   margin-left: 0 !important;
+   padding-right: 0 !important;
+   margin-right: 0 !important;
+}
+
+.valign {
+	display: inline-block; 
+	vertical-align: middle;
+}
+
+.list-spaced li {
+    margin-bottom: 6px;
+}
+
+.rel {
+	position: relative;
+}
+
+.app-view {
+    min-height: 500px;
+}
+
+.text-sm {
+    font-size: $font-size-sm;
+}
+
+.text-lg {
+    font-size: $font-size-base;
+}
+
+.text-primary {
+    color: $brand-primary;
+}
+
+small {
+    color: $text-color;
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  @include opacity(0.5);
+}

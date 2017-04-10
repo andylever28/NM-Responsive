@@ -3,6 +3,21 @@ $sans-serif: Helvetica, Arial, Sans-serif;
 $border-size: 6px solid;
 $newsmax-primary: #295AAB;
 $newsmax-secondary: #c32620;
+$spacer-line: 1px solid #dfdfe7;
+$world-color: #AA65AA;
+$finance-color: #EBA100;
+$health-color: #57A1B1;
+$module-color: #8EBFE0;
+$special-head-color: #C4321E;
+@mixin slant($border-color) {
+    float: left;
+    border: 30px solid $border-color; 
+    border-top: 30px solid #fff; 
+    border-right: 30px solid #fff; 
+    border-bottom: 0; 
+    height: 0; 
+    width: 0; 
+}
 #nmCanvasPhoto {
 	margin-top: 20px;
 }
@@ -23,11 +38,38 @@ $newsmax-secondary: #c32620;
 	}
 }
 
+.nmBreakingNewsCont {
+    border: 1px solid $newsmax-secondary;
 
 
+    #nmBreakingNewsTitle,
+    #nmBreakingText {
+        font-size: 16px;
+    }
+
+    #nmBreakingNewsTitle {
+        background-color: $newsmax-secondary;
+        color: #fff;
+        font-family: $sans-serif;
+        padding: 4px 10px 0 10px;
+        font-weight: bold;
+        height: 27px;
+    }
+
+    #nmBreakingText  {
+        font-size: 18px;
+        margin-left: 10px;
+        font-weight: normal;
+    
+    }
+
+}
 // Medium devices 
 @media (min-width: 768px) {
-	
+	 #nmBreakingNewsTitle,
+    #nmBreakingText {
+        display: inline-block;
+        }
 	#nmCanvasPhoto{
 		border-left: $border-size $newsmax-secondary;
 	}

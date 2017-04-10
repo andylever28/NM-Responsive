@@ -1,9 +1,9 @@
 ﻿<!doctype html>
 <html class="no-js" lang="">
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Newsmax Responsive</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -15,15 +15,66 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" href="styles/variables.css">
-	<link rel="stylesheet" href="styles/canvas.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/canvas.css">
     <link rel="stylesheet" href="styles/specialsection.css">
     <link rel="stylesheet" href="styles/newsfront.css">
     <link rel="stylesheet" href="styles/insiderinfo.css">
     <link rel="stylesheet" href="styles/signup.css">
-	<link rel="stylesheet" href="styles/social.css">
-    
+    <link rel="stylesheet" href="styles/social.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+
+			$(function() {
+
+					var nav = $('nav');
+					var selected = '';
+
+					var navHandler = $(nav.data('handler'));
+					navHandler.on('click', function(e) {
+			        toggleMenu();
+							e.preventDefault();
+			    });
+
+					var toggleMenu = function() {
+			        nav.toggleClass('hide');
+			        if (nav.hasClass('hide')) {
+			            navHandler.html('<i class="fa fa-bars fa-2x"></i>');
+			        } else {
+			            navHandler.html('<i class="fa fa-times fa-2x"></i>');
+			        }
+			    };
+
+					$('.nav-sites li a').on('click', function(e) {
+						$('.nav-sites li').removeClass('active');
+						$('.nav-section').removeClass('active');
+
+						var ns = $(this);
+						ns.parent().addClass('active');
+
+						var cs = $('[data-section="'+ ns.data('section') +'"]');
+						cs.addClass('active');
+
+						e.preventDefault();
+					});
+
+					$(document).on('click', function (e) {
+			        if (!$(e.target).is("i, a")) {
+			            if (!nav.hasClass('hide')) {
+			                toggleMenu();
+			            }
+			        }
+			    });
+
+			});
+
+      </script>
+
 
     <!-- endbuild -->
     
@@ -50,890 +101,1120 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    <div class="container">
-		<!-- Navbar content -->
-			<div class="row"> 
-				<div class="col-xs-12">
-					<nav class="navbar navbar-default">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style>
-								<div class="nav navbar-nav">
-									<div class="row">
-										<div class="col-xs-6">
-											<ul> 
-												<li class="active"> <a href="#"> NEWSMAX </a> </li>
-												<li> <a href="#"> TV </a> </li>
-												<li> <a href="#"> FINANCE </a> </li>
-												<li> <a href="#"> HEALTH  </a> </li>
-												<li> <a href="#"> WORLD </a> </li>
-											</ul>
-										</div>
-										<div class="col-xs-6">
-											<div class="row">
-												<div class="show col-xs-12">
-													<ul> 
-														<li> Home </li>
-														<li> Newsfront </li>
-														<li> Newsmax TV </li>
-														<li> America </li>
-														<li> Insiders </li>
-														<li> The Wire </li>
-														<li> Politics </li>
-														<li> Best Lists </li>
-														<li> View Full Site </li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-					</nav>
-				</div>
-			</div> <!-- End navbar content --> 
-				 <!-- Sponsor content --> 
-			<div class="row">
-				<div class="col-xs-12 nmBreakingNewsCont"> 
-					<div id="nmBreakingNewsTitle"> Sponsor </div> 
-					<div id="nmBreakingText"> <h2> Hollywood's #1 Secret To Anti-Aging (Do This Daily) </h2> </div>
-				</div>
-			</div> <!-- end sponsor content -->
-			<!-- canvas content -->
-			<div class="row"> 
-				<div class="col-xs-12">
-					<div class="row row-eq-height">
-						<div class="col-sm-4">
-							<div id="nmCanvasPhoto">
-								<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"><img class="img-responsive center-block" src="http://www.fillmurray.com/800/500"/> </a> 
-							</div>
-						</div>
-						<div class="col-sm-8">
-							<div id="nmCanvasContainer">
-								<div id="nmCanvasHeadline">
-									<h4> <a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094">House Intel Committee Cancels Meetings Amid Uproar Over Russia</a> </h4>
-								</div>
-								<div id="nmCanvasSummary" class="hidden-xs"> The House Intelligence Committee has canceled its upcoming meetings as partisan uproar grows over its investigation into ties between Russia and the Trump campaign, CNN reported Tuesday.
-									<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>	
-								</div>
-							</div>	
-						</div>
-					</div>
-				</div>
-			</div> <!-- end canvas content --> 
-			
-			<div class="row" id="nmContentContainer"> <!-- Left Column --> 
-				<div class="col-md-8" id="nmLeftColumn">
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="nmSpecialHead nmSectionHead"> 
-								<div class="nmSpecialHeadL"> </div> 
-								<div class="nmSpecialHeadLabel">
-									<a href="/hottopics/topic/2016-Elections/246" class="nmSpecialHeadLink">Trump: The First 100 Days</a>									
-								</div>
-								<div class="nmSpecialHeadR"> </div>
-							</div>
-						</div>
-					</div>
-				
-					<div class="row nmSpecialSection">
-						<div class="col-xs-3">
-							<div id="nmSpecialSectionThumb">
-								<img src="http://www.fillmurray.com/300/500" class="img-responsive"/>
-							</div>
-						</div>
-						<div class="col-xs-9">
-							<div class="nmSpecialSectionHeadline">
-								<h2>Pence Casts Tiebreaker to Reverse Obama Rule on Womens Healthcare </h2> 
-							</div>
-						</div>
-							<div class="col-xs-12 col-sm-9">
-								<div class="nmSpecialContent">
-									<ul class="nmSpecialLinks"> 
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
-										<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>										
-									</ul>
-								</div>
-							</div>
+<div class="container">
+	<!-- Navbar content -->
+    <header class="header hidden-sm hidden-lg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="toggle-menu">
+                        <a href="#" id="toggle-menu">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </a>
+                        <div class="menu-descriptor">MENU</div>
+                    </div>
+                </div>
+                <div class="col-xs-8 no-padding">
+                    <a ng-href="#">
+                        <div class="center-block nms logo newsmax" ng-class="site"> 
+                            <img class="img-responsive" src="images/logo.png" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <div class="tv-menu pull-right">
+                        <a href="#">
+                            <div class="nms nms-nm-tv">
+                                
+                            </div>
+                        </a>
+                        <div class="tv-descriptor text-center">LIVE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-						
-						<div class="col-xs-12">
-							<div class="nmMoreSection nothumb">
-								<a href="#"> More Trump: The First 100 Days </a>
-							</div>
-						</div>
-					</div>
-				
-					
-					<div class="row"> <!-- Newsfront Section -->
-						<div class="col-xs-12">
-							<div class="nmSectionHead"> 
-								<div class="nmSectionHeadL"> </div>
-								<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Newsfront</a> </div>
-								<div class="nmSectionHeadR"> </div>
-							</div>
-						</div>
-					</div>
-					<!-- Lead story --> 
-					<div class="row nmNewsfrontLead">
-						<div class="col-xs-4">
-							<div class="nmLeadStoryThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div>
-						</div>
-						<div class="col-xs-8">
-							<div class="nmLeadStoryHead">
-								<h2> British PM May Formally Triggers Brexit </h2>
-							</div>
-							<div class="nmLeadStorySummary hidden-xs"> <!-- Summary will not display on Mobile -->
-								 British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union.... 
-							</div>
-						</div>
-					</div> <!-- end lead story --> 
-					<!-- Newsfront Stories -->
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/300" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary hidden-xs"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
-						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
-								</div>
-								<div class="nmNewsfrontSummary hidden-xs"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.placecage.com/300/300" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
+    <nav class="site-navbar hide" data-handler="#toggle-menu">
+        <div class="container-fluid">
+            <header class="row">
+                <div class="col-xs-6 no-padding">
+                    <span class="nav-sites-title">SITES</span>
+                </div>
+                <div class="col-xs-6 no-padding">
+                    <span class="nav-section-title">SECTIONS</span>
+                </div>
+            </header>
+            <div class="row">
+                <div class="col-xs-6 no-padding">
+                    <ul class="nav-sites">
+                        <li class="sites-newsmax active">
+                            <a href="#" data-section="newsmax">NEWSMAX</a>
+                        </li>
+                        <li class="sites-tv">
+                            <a href="http://www.newsmax.com/t/tv" data-section="tv">TV</a>
+                        </li>
+                        <li class="sites-health">
+                            <a href="http://www.newsmax.com/t/health" data-section="health">HEALTH</a>
+                        </li>
+                        <li class="sites-finance">
+                            <a href="http://www.newsmax.com/t/finance" data-section="finance">FINANCE</a>
+                        </li>
+                        <li class="sites-world">
+                            <a href="http://www.newsmax.com/t/world" data-section="world">WORLD</a>
+                        </li>
+                    </ul>
+                    <div class="social-links text-center">
+                        <a href="https://www.facebook.com/newsmax" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a> <a href="https://twitter.com/newsmax" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a> <a href="https://plus.google.com/+newsmax" target="_blank"><i class="fa fa-google-plus-square fa-2x"></i></a>
                     </div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.placecage.com/300/200" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.stevensegallery.com/300/300" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.stevensegallery.com/300/200" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<!-- End Newsfront Section --> 
-                    <!-- Start Newsmax TV Section -->
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionHead"> 
-								<div class="nmSectionHeadL"> </div>
-								<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Newsmax TV </a> </div>
-								<div class="nmSectionHeadR"> </div>
-							</div>
-						</div>
+                </div>
+                <div class="col-xs-6 no-padding">
+                    <ul class="nav-section section-newsmax active" data-section="newsmax">
+                        <li>
+                            <a href="http://www.newsmax.com/t/newsmax">Home</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/newsmax/section/16">Newsfront</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/newsmax/section/220">Newsmax TV</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/newsmax/section/18">America</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/newsmax/insiders">Insiders</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/newsmax/section/118">The Wire</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/newsmax/section/1">Politics</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/newsmax/section/342">Best Lists</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/?vtype=main">View Full Site</a>
+                        </li>
+                    </ul>
+                    <ul class="nav-section section-tv" data-section="tv">
+                        <li>
+                            <a href="http://www.newsmaxtv.com">Live TV</a>
+                        </li>
+                    </ul>
+                    <ul class="nav-section section-health" data-section="health">
+                        <li>
+                            <a href="http://www.newsmax.com/t/health">Home</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/177">Health News</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/178">Cancer</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/179">Heart</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/doctors">Doctors</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/180">Brain Health</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/201">People</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/185">Diet and Fitness</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/181">Diabetes</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/182">Natural Health</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/183">Anti-Aging</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/health/section/186">Health Wire</a>
+                        </li>
+                    </ul>
+                    <ul class="nav-section section-finance" data-section="finance">
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance">Home</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance/section/8">Street Talk</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance/insiders">Insiders</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance/section/2">Economy</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance/section/6">Companies</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance/section/7">Markets</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance/section/17">Investing and Analysis</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance/section/225">Personal Finance</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/finance/section/71">Larry Kudlow</a>
+                        </li>
+                    </ul>
+                    <ul class="nav-section section-world" data-section="world">
+                        <li>
+                            <a href="http://www.newsmax.com/t/world">Home</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/world/section/162">GlobalTalk</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/world/section/161">TheAmericas</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/world/section/160">Europe</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/world/section/159">Asia</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/world/section/158">MiddleEast</a>
+                        </li>
+                        <li>
+                            <a href="http://www.newsmax.com/t/world/section/157">Africa</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <footer></footer>
+        </div>
+    </nav>
+      
+       <!-- End navbar content --> 
+				<!-- Sponsor content --> 
+	<div class="row">
+		<div class="col-xs-12">
+            <div class="nmBreakingNewsCont"> 
+			    <div id="nmBreakingNewsTitle"> Sponsor </div> 
+			    <div id="nmBreakingText">Hollywood's #1 Secret To Anti-Aging (Do This Daily)</div>
+            </div>
+		</div>
+	</div> <!-- end sponsor content -->
+		<!-- canvas content -->
+	<div class="row"> 
+		<div class="col-xs-12">
+			<div class="row row-eq-height">
+				<div class="col-sm-4">
+					<div id="nmCanvasPhoto">
+						<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"><img class="img-responsive center-block" src="http://www.fillmurray.com/800/500"/> </a> 
 					</div>
-					
-					<div class="row nmNewsfrontStory">
-						<div class="col-xs-3">
-							<div class="nmNewsfrontThumb">
-								<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
-							</div> 
+				</div>
+				<div class="col-sm-8">
+					<div id="nmCanvasContainer">
+						<div id="nmCanvasHeadline">
+							<h4> <a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094">House Intel Committee Cancels Meetings Amid Uproar Over Russia</a> </h4>
 						</div>
-						<div class="col-xs-9">
-							<div class="nmNewsfrontT">
-								<div class="nmNewsfrontHead">
-									<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-								</div>
-								<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
-									Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
-								</div>
-							</div>
-						</div>
-					</div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.fillmurray.com/300/300" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.placecage.com/300/300" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.placecage.com/300/200" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.stevensegallery.com/300/300" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row nmNewsfrontStory">
-                        <div class="col-xs-3">
-                            <div class="nmNewsfrontThumb">
-                                <img src="http://www.stevensegallery.com/300/200" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="nmNewsfrontT">
-                                <div class="nmNewsfrontHead">
-                                    <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
-                                </div>
-                                <div class="nmNewsfrontSummary hidden-xs">
-                                    <!-- Summary Will not display on Mobile -->
-                                    Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<!-- End Newsmax TV --> 
-					<!-- Start America Section --> 
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionHead"> 
-								<div class="nmSectionHeadL"> </div>
-								<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">America</a> </div>
-								<div class="nmSectionHeadR"> </div>
-							</div>
-						</div>
-					</div>
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionLinks">
-								<ul class="nmSectionLinks">
-									<li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
-									<li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
-									<li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					
-				
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="nmMoreSection nothumb">
-                                <a href="#">More America </a>
-                            </div>
-						</div>
-					</div>	<!-- end of America Section -->
-					<!-- Start Politics Section -->
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionHead"> 
-								<div class="nmSectionHeadL"> </div>
-								<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink"> Politics </a> </div>
-								<div class="nmSectionHeadR"> </div>
-							</div>
-						</div>
-					</div>
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionLinks">
-								<ul class="nmSectionLinks">
-									<li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
-									<li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
-									<li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					
-				
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="nmMoreSection nothumb">
-                                <a href="#"> More Politics </a>
-                            </div>
-						</div>
-					</div>	<!--End Politics Section -->
-					
-					<!-- Start World Section -->
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionHead" id="nmWorldLabel"> 
-								<div class="nmSectionHeadL"> </div>
-								<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">World</a> </div>
-								<div class="nmSectionHeadR"> </div>
-							</div>
-						</div>
-					</div>
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionLinks">
-								<ul class="nmSectionLinks">
-									<li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
-									<li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
-									<li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					
-				
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="nmMoreSection nothumb">
-                                <a href="#"> More World </a>
-                            </div>
-						</div>
-					</div>	<!-- End World --> 
-					
-					<!-- Start Finance -->
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionHead" id="nmFinanceLabel"> 
-								<div class="nmSectionHeadL"> </div>
-								<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Finance</a> </div>
-								<div class="nmSectionHeadR"> </div>
-							</div>
-						</div>
-					</div>
-					
-                    <div class="row nmNewsfrontLead">
-                        <div class="col-xs-4">
-                            <div class="nmLeadStoryThumb financeThumb">
-                                <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
-                            </div>
-                        </div>
-                        <div class="col-xs-8">
-                            <div class="nmLeadStoryHead">
-                                <h2> Finance and some others lead story is larger - this is header </h2>
-                            </div>
-                            <div class="nmLeadStorySummary hidden-xs">
-                                <!-- Summary will not display on Mobile -->
-                                British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union....<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>
-                            </div>
-                        </div>
-                    </div> 
-					
-					<div class="row"> 
-						<div class="col-xs-12">
-							<div class="nmSectionLinks">
-								<ul class="nmSectionLinks">
-									<li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
-									<li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
-									<li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					
-				
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="nmMoreSection nothumb">
-                                <a href="#">More Finance </a>
-                            </div>
+						<div id="nmCanvasSummary" class="hidden-xs"> The House Intelligence Committee has canceled its upcoming meetings as partisan uproar grows over its investigation into ties between Russia and the Trump campaign, CNN reported Tuesday.
+							<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>	
 						</div>
 					</div>	
-                <!-- end finance -->
-                <!-- Start Health -->
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="nmSectionHead" id="nmHealthLabel">
-                                <div class="nmSectionHeadL"> </div>
-                                <div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Health</a> </div>
-                                <div class="nmSectionHeadR"> </div>
-                            </div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- end canvas content --> 
+			
+	<div class="row" id="nmContentContainer">
+        <div class="col-md-8" id="nmLeftColumn"><!-- Left Column --> 
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="nmSpecialHead nmSectionHead"> 
+						<div class="nmSpecialHeadLabel">
+							<a href="/hottopics/topic/2016-Elections/246" class="nmSpecialHeadLink">Trump: The First 100 Days</a>									
+						</div>
+						<div class="nmSpecialHeadR"> </div>
+                        <div class="clear"></div>
+					</div>
+				</div>
+			</div>	
+			<div class="row nmSpecialSection">
+				<div class="col-xs-3">
+					<div id="nmSpecialSectionThumb">
+						<img src="http://www.fillmurray.com/300/500" class="img-responsive"/>
+					</div>
+				</div>
+				<div class="col-xs-9">
+					<div class="nmSpecialSectionHeadline">
+						<h2>Pence Casts Tiebreaker to Reverse Obama Rule on Womens Healthcare </h2> 
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-9">
+					<div class="nmSpecialContent">
+						<ul class="nmSpecialLinks"> 
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>
+							<li> <a href="#"> Test these will be where the content snippets forlinks will display </a> </li>										
+						</ul>
+					</div>
+				</div>	
+				<div class="col-xs-12">
+					<div class="nmMoreSection nothumb">
+						<a href="#"> More Trump: The First 100 Days </a>
+					</div>
+				</div>
+			</div>
+			<div class="row"> <!-- Newsfront Section -->
+				<div class="col-xs-12">
+					<div class="nmSectionHead"> 
+						<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Newsfront</a> </div>
+						<div class="nmSectionHeadR"> </div>
+                        <div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Lead story --> 
+			<div class="row nmNewsfrontLead">
+				<div class="col-xs-4">
+					<div class="nmLeadStoryThumb">
+						<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
+					</div>
+				</div>
+				<div class="col-xs-8">
+					<div class="nmLeadStoryHead">
+						<h2> British PM May Formally Triggers Brexit </h2>
+					</div>
+					<div class="nmLeadStorySummary hidden-xs"> <!-- Summary will not display on Mobile -->
+							British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union.... 
+					</div>
+				</div>
+			</div> <!-- end lead story --> 
+			<!-- Newsfront Stories -->
+			<div class="row nmNewsfrontStory">
+				<div class="col-xs-3">
+					<div class="nmNewsfrontThumb">
+						<img src="http://www.fillmurray.com/300/300" class="img-responsive"/>
+					</div> 
+				</div>
+				<div class="col-xs-9">
+					<div class="nmNewsfrontT">
+						<div class="nmNewsfrontHead">
+							<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+						</div>
+						<div class="nmNewsfrontSummary hidden-xs"> <!-- Summary Will not display on Mobile -->
+							Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row nmNewsfrontStory">
+				<div class="col-xs-3">
+					<div class="nmNewsfrontThumb">
+						<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
+					</div> 
+				</div>
+				<div class="col-xs-9">
+					<div class="nmNewsfrontT">
+						<div class="nmNewsfrontHead">
+							<h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+						</div>
+						<div class="nmNewsfrontSummary hidden-xs"> <!-- Summary Will not display on Mobile -->
+							Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.placecage.com/300/300" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                        </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
                         </div>
                     </div>
-
-                    <div class="row nmNewsfrontLead">
-                        <div class="col-xs-4">
-                            <div class="nmLeadStoryThumb healthThumb">
-                                <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
-                            </div>
+                </div>
+            </div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.placecage.com/300/200" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
                         </div>
-                        <div class="col-xs-8">
-                            <div class="nmLeadStoryHead">
-                                <h2> Health and some others lead story is larger - this is header </h2>
-                            </div>
-                            <div class="nmLeadStorySummary hidden-xs">
-                                <!-- Summary will not display on Mobile -->
-                                British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union... <a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>
-                            </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="nmSectionLinks">
-                                <ul class="nmSectionLinks">
-                                    <li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
-                                    <li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
-                                    <li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
-                                </ul>
-                            </div>
+                </div>
+            </div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.stevensegallery.com/300/300" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                        </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
                         </div>
                     </div>
-
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="nmMoreSection nothumb">
-                                <a href="#">More Health </a>
-                            </div>
+                </div>
+            </div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.stevensegallery.com/300/200" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
                         </div>
-                    </div>	
-				</div> <!-- end left column -->
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="nmMoreSection">
+                        <a href="#"> More Newsfront </a>
+                    </div>
+                </div>
+            </div>
+			<!-- End Newsfront Section --> 
+            <!-- Start Newsmax TV Section -->
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionHead"> 
+						<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Newsmax TV </a> </div>
+						<div class="nmSectionHeadR"> </div>
+					</div>
+				</div>
+			</div>	
+			<div class="row nmNewsfrontStory">
+				<div class="col-xs-3">
+					<div class="nmNewsfrontThumb">
+						<img src="http://www.fillmurray.com/300/200" class="img-responsive"/>
+					</div> 
+				</div>
+				<div class="col-xs-9">
+					<div class="nmNewsfrontT">
+						<div class="nmNewsfrontHead">
+							<h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+						</div>
+						<div class="nmNewsfrontSummary"> <!-- Summary Will not display on Mobile -->
+							Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>	 
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.fillmurray.com/300/300" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                        </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+                        </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.placecage.com/300/300" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                        </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.placecage.com/300/200" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+                        </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.stevensegallery.com/300/300" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> 3 Storm Chasers Killed as They Collide Pursuing Texas Tornado </h2>
+                        </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row nmNewsfrontStory">
+                <div class="col-xs-3">
+                    <div class="nmNewsfrontThumb">
+                        <img src="http://www.stevensegallery.com/300/200" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="nmNewsfrontT">
+                        <div class="nmNewsfrontHead">
+                            <h2> North Carolina OKs Rolling Back 'Bathroom Bill' </h2>
+                        </div>
+                        <div class="nmNewsfrontSummary hidden-xs">
+                            <!-- Summary Will not display on Mobile -->
+                            Three storm chasers pursuing a tornado were killed when their <a href="http://www.newsmax.com/TheWire/storm-chasers-killed-collide/2017/03/29/id/781316/"> [Full Story] </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="nmMoreSection">
+                        <a href="#"> More Newsmax TV </a>
+                    </div>
+                </div>
+            </div>
+			<!-- End Newsmax TV --> 
+			<!-- Start America Section --> 
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionHead"> 
+						<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">America</a> </div>
+						<div class="nmSectionHeadR"> </div>
+					</div>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionLinks">
+						<ul class="nmSectionLinks">
+							<li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
+							<li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
+							<li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
+						</ul>
+					</div>
+				</div>
+			</div>		
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="nmMoreSection nothumb">
+                        <a href="#">More America </a>
+                    </div>
+				</div>
+			</div>	<!-- end of America Section -->
+			<!-- Start Politics Section -->
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionHead"> 
+						<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink"> Politics </a> </div>
+						<div class="nmSectionHeadR"> </div>
+					</div>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionLinks">
+						<ul class="nmSectionLinks">
+							<li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
+							<li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
+							<li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="nmMoreSection nothumb">
+                        <a href="#"> More Politics </a>
+                    </div>
+				</div>
+			</div>	<!--End Politics Section -->
+					
+			<!-- Start World Section -->
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionHead" id="nmWorldLabel"> 
+						<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">World</a> </div>
+						<div class="nmSectionHeadR"> </div>
+					</div>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionLinks">
+						<ul class="nmSectionLinks">
+							<li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
+							<li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
+							<li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="nmMoreSection nothumb">
+                        <a href="#"> More World </a>
+                    </div>
+				</div>
+			</div>	<!-- End World --> 
+					
+			<!-- Start Finance -->
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionHead" id="nmFinanceLabel"> 
+						<div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Finance</a> </div>
+						<div class="nmSectionHeadR"> </div>
+					</div>
+				</div>
+			</div>
+					
+            <div class="row nmNewsfrontLead">
+                <div class="col-xs-4">
+                    <div class="nmLeadStoryThumb financeThumb">
+                        <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="nmLeadStoryHead">
+                        <h2> Finance and some others lead story is larger - this is header </h2>
+                    </div>
+                    <div class="nmLeadStorySummary hidden-xs">
+                        <!-- Summary will not display on Mobile -->
+                        British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union....<a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>
+                    </div>
+                </div>
+            </div> 
+					
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="nmSectionLinks">
+						<ul class="nmSectionLinks">
+							<li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
+							<li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
+							<li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="nmMoreSection nothumb">
+                        <a href="#">More Finance </a>
+                    </div>
+				</div>
+			</div>	
+        <!-- end finance -->
+        <!-- Start Health -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="nmSectionHead" id="nmHealthLabel">
+                        <div class="nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Health</a> </div>
+                        <div class="nmSectionHeadR"> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row nmNewsfrontLead">
+                <div class="col-xs-4">
+                    <div class="nmLeadStoryThumb healthThumb">
+                        <img src="http://www.fillmurray.com/300/200" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="nmLeadStoryHead">
+                        <h2> Health and some others lead story is larger - this is header </h2>
+                    </div>
+                    <div class="nmLeadStorySummary hidden-xs">
+                        <!-- Summary will not display on Mobile -->
+                        British Prime Minister Theresa May filed formal Brexit divorce papers Wednesday, pitching the United Kingdom into the unknown and triggering years of uncertain negotiations that will test the endurance of the European Union... <a href="http://www.newsmax.com/Politics/devin-nunes-intelligence-meetings-canceled/2017/03/28/id/781094"> [Full Story] </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="nmSectionLinks">
+                        <ul class="nmSectionLinks">
+                            <li> <a href="http://www.newsmax.com/US/trump-uses-iphone-apple/2017/03/29/id/781378" class="nmSectionLink Default">Trump Using iPhone Despite Once Calling for Apple Boycott</a> </li>
+                            <li> <a href="http://www.newsmax.com/US/Massachusetts-Sheriff-Congress-Sanctuary-Cities/2017/03/29/id/781377" class="nmSectionLink Default">Mass. Sheriff to Congress: Bust Officials Who Support Sanctuary Cities</a> </li>
+                            <li> <a href="http://www.newsmax.com/US/Jim-Webb-Naval-Academy-Award-Declines/2017/03/29/id/781352" class="nmSectionLink Default">Jim Webb Declines Distinguished Naval Academy Grad Award </a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="nmMoreSection nothumb">
+                        <a href="#">More Health </a>
+                    </div>
+                </div>
+            </div>	
+		</div> <!-- end left column -->
                 				
-                <div class="col-md-4" id="nmRightColumn">
-                    <!-- right column for md screen / bottom half of content  -->
+        <div class="col-md-4" id="nmRightColumn">
+            <!-- right column for md screen / bottom half of content  -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="DFP topDFP">
+                        <img src="http://www.placehold.it/300x250" />
+                    </div>
+                </div>
+            </div>
+            <!-- Correspondents -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="nmModuleHead nmSectionHead">
+                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Correspondents</a> </div>
+                        <div class="nmModuleHeadR"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row nmInsiderCont">
+                        <div class="col-xs-3 col-sm-2 col-md-3">
+                            <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
+                            <div class="nmInsiderName">
+                                <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">John Gizzi</a>
+
+                            </div>
+                            <div class="nmInsiderTitle">
+                                John Gizzin on Politics 
+                            </div>
+                            <div class="nmInsiderSummary">
+                                <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">William T. Coleman - One of the Finest Supreme Court Justices Who Never Was</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <!-- Insiders -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="nmModuleHead nmSectionHead">
+                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Insiders</a> </div>
+                        <div class="nmModuleHeadR"> </div>
+                    </div>
+                    </div> 
+                </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row nmInsiderCont">
+                        <div class="col-xs-3 col-sm-2 col-md-3">
+                            <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
+                            <div class="nmInsiderName">
+                                <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">John Gizzi</a>
+
+                            </div>
+                            <div class="nmInsiderTitle">
+                                Conservatively Speaking
+                            </div>
+                            <div class="nmInsiderSummary">
+                                <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">A Challenging Quiz About Baseball</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row nmInsiderCont">
+                        <div class="col-xs-3 col-sm-2 col-md-3">
+                            <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
+                            <div class="nmInsiderName">
+                                <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">George Will</a>
+
+                            </div>
+                            <div class="nmInsiderTitle">
+                                Conservatively Speaking
+                            </div>
+                            <div class="nmInsiderSummary">
+                                <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">A Challenging Quiz About Baseball</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row nmInsiderCont">
+                        <div class="col-xs-3 col-sm-2 col-md-3">
+                            <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
+                            <div class="nmInsiderName">
+                                <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">Charlie Gerow</a>
+
+                            </div>
+                            <div class="nmInsiderTitle">
+                                On the Issues
+                            </div>
+                            <div class="nmInsiderSummary">
+                                <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">There's Still Time for a Heatlhcare Do-over, But Not Much</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row nmInsiderCont">
+                        <div class="col-xs-3 col-sm-2 col-md-3">
+                            <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
+                            <div class="nmInsiderName">
+                                <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">James Hirsen</a>
+
+                            </div>
+                            <div class="nmInsiderTitle">
+                                Left Coast Report
+                            </div>
+                            <div class="nmInsiderSummary">
+                                <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">Left-leaning Scarlett Johansson Accused of 'Whitewashing' Is Ironic</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row nmInsiderCont">
+                        <div class="col-xs-3 col-sm-2 col-md-3">
+                            <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
+                            <div class="nmInsiderName">
+                                <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">Larry Bell</a>
+
+                            </div>
+                            <div class="nmInsiderTitle">
+                                On Point
+                            </div>
+                            <div class="nmInsiderSummary">
+                                <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">North Korea Nuclear Missle Threat at Tense and Critical Stage</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="nmMoreSection"> <a href="#"> All Insiders </a> </div>
+                </div>
+            </div>
+            <!-- End Insiders -->
+            <!-- Email Sign up Box -->
+            <div class="row nmSignUpContainer">
+                <div class="col-sm-6 col-md-12">
+                    <div class="nmSectionHead nmEmailHead"  id="emailLabel">
+                        <div class="nmEmailHeadLabel nmSectionHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink"> Free Newsmax E-Alerts</a> </div>
+                        <div class="nmEmailHeadR"> </div>
+                    </div>
+                    <div class="row signupFormWrapper">
+                        <div class="col-xs-12 signupBox">
+                            <div class="form-group row">
+                                <label for="nmEmailInput" class="col-xs-3 col-form-label">Email:</label>
+                                <div class="col-xs-9">
+                                    <input class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="nmCountrySelect" class="col-xs-3 col-form-label">Country:</label>
+                                <div class="col-xs-9">
+                                    <select class="form-control" id="exampleSelect2">
+                                        <option>United States</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="nmZipInput" class="col-xs-3 col-form-label">Zip Code:</label>
+                                <div class="col-xs-6">
+                                    <input class="form-control" type="text" id="example-text-input">
+                                </div>
+                                <div class="col-xs-3 submitButton">
+                                    <button type="submit" class="btn btn-danger">SIGN UP</button>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-12 formPrivacyStatement">
+                                    Privacy: We will not share your email
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="DFP  visible-sm-block">
+                    <img src="http://www.placehold.it/300x250" />
+                </div>
+            </div><!--End Sign Up Box-->
+            <div class="row">
+                <div class="col-sm-6 col-md-12">
                     <div class="row">
+                        <div class="col-xs-12">
+                            <div class="nmSectionHead nmModuleHead">
+                                <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Follow Newsmax</a> </div>
+                                <div class="nmModuleHeadR"> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row nmSocialCont">
+                        <div class="col-xs-4 nmSocial">
+                            <p> <span class="likeFollow">Like us </span> <br> on Facebook </p>
+                            <!--Facebook Like Button -->    <div class="fb-like" data-href="https://www.facebook.com/newsmax/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true"></div>
+                        </div>
+                        <div class="col-xs-4 nmSocial">
+                            <p>  <span class="likeFollow">Follow us </span> <br> on Twitter <br> </p>
+                            <a class="twitter-follow-button" data-show-screen-name="false" data-show-count="false"
+                                href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fwww.newsmax.com%2F&ref_src=twsrc%5Etfw&region=follow_link&screen_name=Newsmax&tw_p=followbutton">
+                                Follow
+                            </a>
+                        </div>
+                        <div class="col-xs-4 nmSocial socialBordernone">
+                            <p> <span class="likeFollow"> Add us </span> <br> on Google Plus </p>
+                            <div class="g-plusone" data-annotation="none" data-href="https://plus.google.com/+newsmax"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-12">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="nmSectionHead nmModuleHead">
+                                <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Twitter Network</a> </div>
+                                <div class="nmModuleHeadR"> </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 twitterNetwork">
+                            <p> Now 30 million followers and growing. </p>
+                            <a href="http://www.newsmax.com/twitternetwork">Click here for more details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-12">
+                    <div class="row">
+                        <div class="col-xs-12 visible-sm-block">
+                            <div class="DFP">
+                                <img src="http://www.placehold.it/300x250" />
+                            </div>
+                        </div>
                         <div class="col-xs-12">
                             <div class="DFP">
                                 <img src="http://www.placehold.it/300x250" />
                             </div>
                         </div>
                     </div>
-                    <!-- Correspondents -->
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="nmModuleHead nmSectionHead">
-                                <div class="nmModuleHeadL"> </div>
-                                <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Correspondents</a> </div>
-                                <div class="nmModuleHeadR"> </div>
-                            </div>
-                            <div class="row nmInsiderCont">
-                                <div class="col-xs-3 col-sm-2 col-md-3">
-                                    <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
-                                </div>
-                                <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
-                                    <div class="nmInsiderName">
-                                        <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">John Gizzi</a>
+                </div>
+                <div class="col-sm-6 col-md-12">
+                    <div class="nmSectionHead nmModuleHead">
+                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Around The Web </a> </div>
+                        <div class="nmModuleHeadR"> </div>
+                    </div>
+                    <div id="nmSponsorModule">
+                        <ul class="sponsors">
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Turmeric: 8 New Surprising Health Benefits </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#">The Amazing VA Benefits Not Enough Vets Are Claiming </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Doctors 2 Minute Hack To Lose 1 Pound Of Belly Fat </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> The $100 Trump Retirement Roadmap </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Kathie Lee Gifford’s New Career Away From Cameras </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> willie Robertson Agrees To Shave Off Famous Beard </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Your Data is Posted Online, Look Yourself Up Today </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Turmeric: 8 New Surprising Health Benefits </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#">The Amazing VA Benefits Not Enough Vets Are Claiming </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Doctors 2 Minute Hack To Lose 1 Pound Of Belly Fat </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> The $100 Trump Retirement Roadmap </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Kathie Lee Gifford’s New Career Away From Cameras </a></li>
+                            <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> willie Robertson Agrees To Shave Off Famous Beard </a></li>
+                        </ul>
 
-                                    </div>
-                                    <div class="nmInsiderTitle">
-                                        John Gizzi on Politics
-                                    </div>
-                                    <div class="nmInsiderSummary">
-                                        <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">William T. Coleman — One of the Finest Supreme Court Justices Who Never Was</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="whatsThis">
+                            <a href="http://www.newsmax.com/advertise/?oRef=dlvr.it">Powered by Newsmax</a> 
                         </div>
                     </div>
-                    <!-- Insiders -->
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="nmModuleHead nmSectionHead">
-                                <div class="nmModuleHeadL"> </div>
-                                <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Insiders</a> </div>
-                                <div class="nmModuleHeadR"> </div>
-                            </div>
-                            <div class="row nmInsiderCont">
-                                <div class="col-xs-3 col-sm-2 col-md-3">
-                                    <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
-                                </div>
-                                <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
-                                    <div class="nmInsiderName">
-                                        <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">Eli Lake </a>
-
-                                    </div>
-                                    <div class="nmInsiderTitle">
-                                        Bloomberg View
-                                    </div>
-                                    <div class="nmInsiderSummary">
-                                        <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">Obama Adviser Susan Rice Sought NAmes of Trump Associates in Intel</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-12">
+                    <div class="DFP">
+                        <img src="http://www.placehold.it/300x250" />
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="row nmInsiderCont">
-                                <div class="col-xs-3 col-sm-2 col-md-3">
-                                    <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
-                                </div>
-                                <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
-                                    <div class="nmInsiderName">
-                                        <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">George Will</a>
-
-                                    </div>
-                                    <div class="nmInsiderTitle">
-                                        Conservatively Speaking
-                                    </div>
-                                    <div class="nmInsiderSummary">
-                                        <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">A Challenging Quiz About Baseball</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-sm-6 col-md-12">
+                    <div class="nmSectionHead nmModuleHead">
+                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">The Wire</a> </div>
+                        <div class="nmModuleHeadR"> </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="row nmInsiderCont">
-                                <div class="col-xs-3 col-sm-2 col-md-3">
-                                    <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
-                                </div>
-                                <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
-                                    <div class="nmInsiderName">
-                                        <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">Charlie Gerow</a>
-
-                                    </div>
-                                    <div class="nmInsiderTitle">
-                                        On the Issues
-                                    </div>
-                                    <div class="nmInsiderSummary">
-                                        <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">There's Still Time for a Heatlhcare Do-over, But Not Much</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <ul class="feed-random">
+                        <li>
+                            <a href="/TheWire/ian-mckellen-dumbledore/2017/04/04/id/782540" target="_self">Ian McKellen Dumbledore Could've Happened; Actor Explains Why It Didn't</a><br>
+                            <span>Tuesday, 04 Apr 2017 07:01 PM</span>
+                        </li>
+                        <li>
+                            <a href="/TheWire/jeb-bush-marlins/2017/04/05/id/782764" target="_self">Jeb Bush, Marlins Owner? He's Reportedly Interested But Has Competition</a><br>
+                            <span>Wednesday, 05 Apr 2017 06:40 PM</span>
+                        </li>
+                        <li>
+                            <a href="/TheWire/martin-altenburg-ivy-league-accepted-all/2017/04/05/id/782770" target="_self">Martin Altenburg: Ivy League Schools, All 8, Accept North Dakota Senior</a><br>
+                            <span>Wednesday, 05 Apr 2017 05:56 PM</span>
+                        </li>
+                        <li>
+                            <a href="/TheWire/navy-seals-mar-a-lago-president-trump/2017/04/05/id/782635" target="_self">Navy SEALs Storm Mar-a-Lago</a><br>
+                            <span>Wednesday, 05 Apr 2017 09:16 AM</span>
+                        </li>
+                        <li>
+                            <a href="/TheWire/sean-spicer-press-corps-kids-daily-show/2017/04/06/id/782892" target="_self">Sean Spicer Treats Press Corps Like Kids in 'Daily Show' Parody Video</a><br>
+                            <span>Thursday, 06 Apr 2017 10:49 AM</span>
+                        </li>
+                        <li>
+                            <a href="/TheWire/barry-manilow-gay-partner-garry-kief/2017/04/05/id/782720" target="_self">Barry Manilow Opens up About Being Gay, Discusses Longtime Partner</a><br>
+                            <span>Thursday, 06 Apr 2017 06:27 AM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-12">
+                    <div class="nmSectionHead nmModuleHead">
+                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Fast Features</a> </div>
+                        <div class="nmModuleHeadR"> </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="row nmInsiderCont">
-                                <div class="col-xs-3 col-sm-2 col-md-3">
-                                    <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
-                                </div>
-                                <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
-                                    <div class="nmInsiderName">
-                                        <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">James Hirsen</a>
-
-                                    </div>
-                                    <div class="nmInsiderTitle">
-                                        Left Coast Report
-                                    </div>
-                                    <div class="nmInsiderSummary">
-                                        <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">Left-leaning Scarlett Johansson Accused of 'Whitewashing' Is Ironic</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <ul class="feed-random">
+                        <li>
+                            <a href="/FastFeatures/cruise-news-small-lines/2016/12/05/id/762190" target="_self">Cruise News: 3 Small Cruise Lines</a><br>
+                            <span>Monday, 05 Dec 2016 09:16 AM</span>
+                        </li>
+                        <li>
+                            <a href="/FastFeatures/farmers-tips-prepare-tax-day/2017/02/21/id/774758" target="_self">Farmers: 7 Tips to Prepare for Tax Day</a><br>
+                            <span>Tuesday, 21 Feb 2017 11:06 AM</span>
+                        </li>
+                        <li>
+                            <a href="/FastFeatures/aarp-tech-tips-seniors/2017/02/24/id/775432" target="_self">AARP: 7 Tech Tips for Seniors</a><br>
+                            <span>Friday, 24 Feb 2017 02:41 PM</span>
+                        </li>
+                        <li>
+                            <a href="/FastFeatures/golf-top-ranked-courses-caribbean/2017/01/03/id/766568" target="_self">Golf: 7 Top-Ranked Courses in the Caribbean</a><br>
+                            <span>Tuesday, 03 Jan 2017 11:58 AM</span>
+                        </li>
+                        <li>
+                            <a href="/FastFeatures/cruise-onboard-must-haves/2017/02/02/id/771699" target="_self">Cruise News: 8 Onboard Must-Haves</a><br>
+                            <span>Thursday, 02 Feb 2017 01:37 PM</span>
+                        </li>
+                        <li>
+                            <a href="/FastFeatures/golf-top-ranked-courses/2016/12/05/id/762191" target="_self">Golf: 7 Top Ranked Courses in Europe</a><br>
+                            <span>Monday, 05 Dec 2016 09:24 AM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-12">
+                    <div class="nmSectionHead nmModuleHead">
+                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">News Partners</a> </div>
+                        <div class="nmModuleHeadR"> </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="row nmInsiderCont">
-                                <div class="col-xs-3 col-sm-2 col-md-3">
-                                    <img class="nmInsiderThumb" src="http://cdn.newsmax.com/CMSPages/GetFile.aspx?guid=7866165d-4b7d-4fd4-a195-c6649baf7b06">
-                                </div>
-                                <div class="col-xs-9 col-sm-10 col-md-9 nmInsiderContent">
-                                    <div class="nmInsiderName">
-                                        <a href="http://www.newsmax.com/blogs/John-Gizzi/id-212">Larry Bell</a>
-
-                                    </div>
-                                    <div class="nmInsiderTitle">
-                                        On Point
-                                    </div>
-                                    <div class="nmInsiderSummary">
-                                        <a href="/JohnGizzi/william-coleman-supreme-court-secretary-of-transportation/2017/04/02/id/782114">North Korea Nuclear Missle Threat at Tense and Critical Stage</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            <div class="nmMoreSection"> <a href="#"> All Insiders </a> </div>
-                        </div>
+                    <div class="DFP">
+                        <img src="http://www.placehold.it/300x250" />
                     </div>
-                    <!-- End Insiders -->
-                    <!-- Email Sign up Box -->
-                    <div class="row nmSignUpContainer">
-                        <div class="col-sm-6 col-md-12">
-                            <div class="nmSectionHead">
-                                <div class="nmModuleHeadL"> </div>
-                                <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink"> Free Newsmax E-Alerts</a> </div>
-                                <div class="nmModuleHeadR"> </div>
-                            </div>
-                            <div class="row signupFormWrapper">
-                                <div class="col-xs-12">
-                                    <div class="form-group row">
-                                        <label for="nmEmailInput" class="col-xs-3 col-form-label">Email:</label>
-                                        <div class="col-xs-9">
-                                            <input class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="nmCountrySelect" class="col-xs-3 col-form-label">Country:</label>
-                                        <div class="col-xs-9">
-                                            <select class="form-control" id="exampleSelect2">
-                                                <option>United States</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="nmZipInput" class="col-xs-3 col-form-label">Zip Code:</label>
-                                        <div class="col-xs-6">
-                                            <input class="form-control" type="text" id="example-text-input">
-                                        </div>
-                                        <div class="col-xs-3 submitButton">
-                                            <button type="submit" class="btn btn-danger">SIGN UP</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-xs-12 formPrivacyStatement">
-                                            Privacy: We will not share your email
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="DFP notTopDfp visible-sm-block">
-                            <img src="http://www.placehold.it/300x250" />
-                        </div>
-                    </div><!--End Sign Up Box-->
-                    <div class="row">
-                        <div class="col-sm-6 col-md-12">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="nmSectionHead nmModuleHead">
-                                        <div class="nmModuleHeadL"> </div>
-                                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Follow Newsmax</a> </div>
-                                        <div class="nmModuleHeadR"> </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row nmSocialCont">
-                                <div class="col-xs-4 nmSocial">
-                                    <p> <span class="likeFollow">Like us </span> <br> on Facebook </p>
-                                    <!--Facebook Like Button -->    <div class="fb-like" data-href="https://www.facebook.com/newsmax/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true"></div>
-                                </div>
-                                <div class="col-xs-4 nmSocial">
-                                    <p>  <span class="likeFollow">Follow us </span> <br> on Twitter <br> </p>
-                                    <a class="twitter-follow-button" data-show-screen-name="false" data-show-count="false"
-                                       href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fwww.newsmax.com%2F&ref_src=twsrc%5Etfw&region=follow_link&screen_name=Newsmax&tw_p=followbutton">
-                                        Follow
-                                    </a>
-                                </div>
-                                <div class="col-xs-4 nmSocial socialBordernone">
-                                    <p> <span class="likeFollow"> Add us </span> <br> on Google Plus </p>
-                                    <div class="g-plusone" data-annotation="none" data-href="https://plus.google.com/+newsmax"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-12">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="nmSectionHead nmModuleHead">
-                                        <div class="nmModuleHeadL"> </div>
-                                        <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Twitter Network</a> </div>
-                                        <div class="nmModuleHeadR"> </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 twitterNetwork">
-                                    <p> Now 30 million followers and growing. </p>
-                                    <a href="http://www.newsmax.com/twitternetwork">Click here for more details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-12">
-                            <div class="row">
-                                <div class="col-xs-12 visible-sm-block">
-                                    <div class="DFP notTopDfp">
-                                        <img src="http://www.placehold.it/300x250" />
-                                    </div>
-                                </div>
-                                <div class="col-xs-12">
-                                    <div class="DFP notTopDfp">
-                                        <img src="http://www.placehold.it/300x250" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-12">
-                            <div class="nmSectionHead nmModuleHead">
-                                <div class="nmModuleHeadL"> </div>
-                                <div class="nmModuleHeadLabel"> <a href="/newsfront" class="nmSectionHeadLink">Around The Web </a> </div>
-                                <div class="nmModuleHeadR"> </div>
-                            </div>
-                            <div id="nmSponsorModule">
-                                <ul class="sponsors">
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Turmeric: 8 New Surprising Health Benefits </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#">The Amazing VA Benefits Not Enough Vets Are Claiming </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Doctors 2 Minute Hack To Lose 1 Pound Of Belly Fat </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> The $100 Trump Retirement Roadmap </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Kathie Lee Gifford’s New Career Away From Cameras </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> willie Robertson Agrees To Shave Off Famous Beard </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Your Data is Posted Online, Look Yourself Up Today </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Turmeric: 8 New Surprising Health Benefits </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#">The Amazing VA Benefits Not Enough Vets Are Claiming </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Doctors 2 Minute Hack To Lose 1 Pound Of Belly Fat </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> The $100 Trump Retirement Roadmap </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> Kathie Lee Gifford’s New Career Away From Cameras </a></li>
-                                    <li><span class="glyphicon glyphicon-arrow-right"></span><a href="#"> willie Robertson Agrees To Shave Off Famous Beard </a></li>
-                                </ul>
-
-                                <div class="whatsThis"> <a href="http://www.newsmax.com/advertise/?oRef=dlvr.it">Powered by Newsmax</a> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end right column -->
-				
-			</div>
-		</div> <!-- end container -->
+                </div>
+            </div>
+        </div> <!-- end right column -->		
+	</div>
+</div> <!-- end container -->
 		
 		
 		

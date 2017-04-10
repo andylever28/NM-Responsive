@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="menu.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		
+		<script>
+			
+			$(function() {
+					
+					var nav = $('nav');
+					var selected = '';
+	
+					var navHandler = $(nav.data('handler'));
+					navHandler.on('click', function(e) {
+			        toggleMenu();
+							e.preventDefault();
+			    });
+					
+					var toggleMenu = function() {
+			        nav.toggleClass('hide');
+			        if (nav.hasClass('hide')) {
+			            navHandler.html('<i class="fa fa-bars fa-2x"></i>');
+			        } else {
+			            navHandler.html('<i class="fa fa-times fa-2x"></i>');
+			        }
+			    };
+					
+					$('.nav-sites li a').on('click', function(e) {
+						$('.nav-sites li').removeClass('active');
+						$('.nav-section').removeClass('active');
+					
+						var ns = $(this);						
+						ns.parent().addClass('active');
+
+						var cs = $('[data-section="'+ ns.data('section') +'"]');
+						cs.addClass('active');
+						
+						e.preventDefault();
+					});
+					
+					$(document).on('click', function (e) {
+			        if (!$(e.target).is("i, a")) {
+			            if (!nav.hasClass('hide')) {
+			                toggleMenu();
+			            }
+			        }
+			    });
+					
+			});
+		
+		</script>
+		
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+		
+		<header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="toggle-menu">
+                        <a href="#" id="toggle-menu">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </a>
+                        <div class="menu-descriptor">MENU</div>
+                    </div>
+                </div>
+                <div class="col-xs-8 no-padding">
+                    <a ng-href="#">
+                        <div class="center-block nms logo newsmax" ng-class="site"></div>
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <div class="tv-menu pull-right">
+                        <a href="#">
+                            <div class="nms nms-nm-tv"></div>
+                        </a>
+                        <div class="tv-descriptor text-center">LIVE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+		
+		<nav class="site-navbar hide" data-handler="#toggle-menu">
+			<div class="container-fluid">
+				<header class="row">
+					<div class="col-xs-6 no-padding">
+						<span class="nav-sites-title">SITES</span>
+					</div>
+					<div class="col-xs-6 no-padding">
+						<span class="nav-section-title">SECTIONS</span>
+					</div>
+				</header>
+				<div class="row">
+					<div class="col-xs-6 no-padding">
+						<ul class="nav-sites">
+							<li class="sites-newsmax active">
+								<a href="#" data-section="newsmax">NEWSMAX</a>
+							</li>
+							<li class="sites-tv">
+								<a href="http://www.newsmax.com/t/tv" data-section="tv">TV</a>
+							</li>
+							<li class="sites-health">
+								<a href="http://www.newsmax.com/t/health" data-section="health">HEALTH</a>
+							</li>
+							<li class="sites-finance">
+								<a href="http://www.newsmax.com/t/finance" data-section="finance">FINANCE</a>
+							</li>
+							<li class="sites-world">
+								<a href="http://www.newsmax.com/t/world" data-section="world">WORLD</a>
+							</li>
+						</ul>
+						<div class="social-links text-center">
+							<a href="https://www.facebook.com/newsmax" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a> <a href="https://twitter.com/newsmax" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a> <a href="https://plus.google.com/+newsmax" target="_blank"><i class="fa fa-google-plus-square fa-2x"></i></a>
+						</div>
+					</div>
+					<div class="col-xs-6 no-padding">
+						<ul class="nav-section section-newsmax active" data-section="newsmax">
+							<li>
+								<a href="http://www.newsmax.com/t/newsmax">Home</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/newsmax/section/16">Newsfront</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/newsmax/section/220">Newsmax TV</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/newsmax/section/18">America</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/newsmax/insiders">Insiders</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/newsmax/section/118">The Wire</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/newsmax/section/1">Politics</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/newsmax/section/342">Best Lists</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/?vtype=main">View Full Site</a>
+							</li>
+						</ul>
+						<ul class="nav-section section-tv" data-section="tv">
+							<li>
+								<a href="http://www.newsmaxtv.com">Live TV</a>
+							</li>
+						</ul>
+						<ul class="nav-section section-health" data-section="health">
+							<li>
+								<a href="http://www.newsmax.com/t/health">Home</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/177">Health News</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/178">Cancer</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/179">Heart</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/doctors">Doctors</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/180">Brain Health</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/201">People</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/185">Diet and Fitness</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/181">Diabetes</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/182">Natural Health</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/183">Anti-Aging</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/health/section/186">Health Wire</a>
+							</li>
+						</ul>
+						<ul class="nav-section section-finance" data-section="finance">
+							<li>
+								<a href="http://www.newsmax.com/t/finance">Home</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/finance/section/8">Street Talk</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/finance/insiders">Insiders</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/finance/section/2">Economy</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/finance/section/6">Companies</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/finance/section/7">Markets</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/finance/section/17">Investing and Analysis</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/finance/section/225">Personal Finance</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/finance/section/71">Larry Kudlow</a>
+							</li>
+						</ul>
+						<ul class="nav-section section-world" data-section="world">
+							<li>
+								<a href="http://www.newsmax.com/t/world">Home</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/world/section/162">GlobalTalk</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/world/section/161">TheAmericas</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/world/section/160">Europe</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/world/section/159">Asia</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/world/section/158">MiddleEast</a>
+							</li>
+							<li>
+								<a href="http://www.newsmax.com/t/world/section/157">Africa</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<footer></footer>
+			</div>
+		</nav>
+
+  </body>
+</html>
