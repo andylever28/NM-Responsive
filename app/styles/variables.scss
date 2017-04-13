@@ -1,16 +1,18 @@
 // Colors
 $text-color: #000;
 $error-color: #f00;
-$brand-primary: #0059aa;
-$brand-secondary: #c62616;
+$brand-primary: #295AAB;
+$brand-secondary: #c32620;
 
 $brand-tv: #5ca83d;
-$brand-health: #52a1b2;
-$brand-money: #eea300;
+$brand-health: #57A1B1;
+$brand-money: #EBA100;
 $brand-money-alt: #2b421c; 
-$brand-world: #ab64ab;
+$brand-world: #AA65AA;
 
-$brand-primary-light: #f4f4f6; 
+$brand-special: #C4321E;
+$brand-primary-light: #f4f4f6;
+$brand-module: #8EBFE0;
 $gray-base: #000;
 $gray-light: #343334;
 $gray-lighter: #c5c5c5;
@@ -38,7 +40,7 @@ $font-size-base: 17px;
 $font-size-sm: 12px; 
 $font-size-breaking: 15px;
 
-$font-family-base: Arial, Georgia, 'Times New Roman', Times, Serif;
+$font-family-base: Helvetica, Arial, Georgia, 'Times New Roman', Times, Serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, Serif;
 
 // Alerts
@@ -53,6 +55,9 @@ $screen-lg: 1200px;
 
 // Misc
 $red-warning: #f00;
+$sprite-sheet: url("/images/nmSpriteMaster.png");
+$spacer-line: 1px solid #dfdfe7;
+$border-size: 6px solid;
 
 // Content Boxes
 $content-box-dl-primary: #500;

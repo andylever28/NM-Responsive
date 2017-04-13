@@ -1,62 +1,38 @@
-$serif: Georgia,'Times New Roman',Times,Serif;
-$sans-serif: Helvetica, Arial, Sans-serif;
-$border-size: 6px solid;
-$newsmax-primary: #295AAB;
-$newsmax-secondary: #c32620;
-$spacer-line: 1px solid #dfdfe7;
-$world-color: #AA65AA;
-$finance-color: #EBA100;
-$health-color: #57A1B1;
-$module-color: #8EBFE0;
-$special-head-color: #C4321E;
-@mixin slant($border-color) {
-    float: left;
-    border: 30px solid $border-color; 
-    border-top: 30px solid #fff; 
-    border-right: 30px solid #fff; 
-    border-bottom: 0; 
-    height: 0; 
-    width: 0; 
-}
-@mixin head-style($color){
-    float: left;
-    background-color: $color;
-    color: #fff;
-    height:30px;
-    box-sizing:border-box;
-    padding: 5px;
-}
+@import 'variables';
+@import 'mixins';
+@import 'scaffolding';
 
 .nmSocialCont {
-
     border-bottom: $spacer-line;
-.nmSocial {
-    padding: 20px 0px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-    border-right: $spacer-line;
+    
+    .nmSocial {
+        padding: 20px 0px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+        border-right: $spacer-line;
 
-    .likeFollow {
-            font-style: italic;
-            font-weight: normal;
-            }
-}
+        .likeFollow {
+                font-style: italic;
+                font-weight: normal;
+                }
+    }
 
-.socialBordernone {
-    border-right: none;
-}
+    .socialBordernone {
+        border-right: none;
+    }
 
 }
 
 .twitterNetwork {
+
     p {
           font-size: 15px;
           margin: 0px;
-      }
+    }
     a {
         font-size: 12px;
-        font-family: $sans-serif;
+        font-family: $font-family-base;
         color: #2058ad;
         font-weight: bold;
     }
@@ -68,35 +44,37 @@ $special-head-color: #C4321E;
     padding: 0px;
 
     li {
-           padding: 0 0 0 10px;
-           margin-bottom: 18px;
+        padding: 0 0 0 10px;
+        margin-bottom: 18px;
            
-          a {
-           color: #000;
-           font-size: 14px;
-           }
-          span {
-              color: $newsmax-secondary;
-              margin-right: 10px;
-              height: 100%;
-          } 
-       }
+        a {
+            color: #000;
+            font-size: 14px;
+        }
+        span {
+            color: $brand-secondary;
+            margin-right: 10px;
+            height: 100%;
+        } 
+    }
 }
 
 .whatsThis {
     text-align: right;
+    
     a {
         color: black;
         font-size: 14px;
         font-weight: bold;
+        padding: 0 15px;
     }
 }
 
 .feed-random {
     margin: 0;
-    padding: 0;
     list-style-type: none;
-
+    padding: 0 15px;
+   
     li {
         padding-bottom: 5px;
         margin: 5px 0;
@@ -107,7 +85,13 @@ $special-head-color: #C4321E;
     }
     span {
         font-size: 11px;
-        font-family: $sans-serif;
+        font-family: $font-family-base;
         color: #666666;
+    }
+}
+
+@media (min-width: 480px) {
+    .feed-random {
+        padding: 0px;
     }
 }

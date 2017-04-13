@@ -91,3 +91,21 @@
   $opacity-ie: $opacity * 100;
   filter: alpha(opacity=$opacity-ie); //IE8
 }
+
+@mixin slant($border-color) {
+    float: left;
+    border: 30px solid $border-color; 
+    border-top: 30px solid #fff; 
+    border-right: 30px solid #fff; 
+    border-bottom: 0; 
+    height: 0; 
+    width: 0; 
+}
+@mixin head-style($color){
+    float: left;
+    background-color: $color;
+    color: #fff;
+    height:30px;
+    box-sizing:border-box;
+    padding: 5px;
+}

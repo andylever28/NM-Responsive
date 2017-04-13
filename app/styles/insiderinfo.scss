@@ -1,37 +1,15 @@
-$serif: Georgia,'Times New Roman',Times,Serif;
-$sans-serif: Helvetica, Arial, Sans-serif;
-$border-size: 6px solid;
-$newsmax-primary: #295AAB;
-$newsmax-secondary: #c32620;
-$spacer-line: 1px solid #dfdfe7;
-$world-color: #AA65AA;
-$finance-color: #EBA100;
-$health-color: #57A1B1;
-$module-color: #8EBFE0;
-$special-head-color: #C4321E;
-@mixin slant($border-color) {
-    float: left;
-    border: 30px solid $border-color; 
-    border-top: 30px solid #fff; 
-    border-right: 30px solid #fff; 
-    border-bottom: 0; 
-    height: 0; 
-    width: 0; 
-}
-@mixin head-style($color){
-    float: left;
-    background-color: $color;
-    color: #fff;
-    height:30px;
-    box-sizing:border-box;
-    padding: 5px;
-}
+@import 'variables';
+@import 'mixins';
+@import 'scaffolding';
+
+
 .DFP {
+
     img {   
-            display: block;
-            margin: 0 auto;
-            margin-top: 20px;
-        }
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
 }
 
 .topDFP img {
@@ -47,6 +25,7 @@ $special-head-color: #C4321E;
 
 .nmInsiderContent {
     padding-left: 0px;
+
     a { 
         color: black;
         font-size: 16px;
@@ -54,7 +33,7 @@ $special-head-color: #C4321E;
     .nmInsiderTitle {
         font-size: 11px;
         font-weight: bold;
-        color: $newsmax-primary;
+        color: $brand-primary;
     }
     .nmInsiderSummary {
         a {
@@ -63,40 +42,40 @@ $special-head-color: #C4321E;
     }
 }
 .nmInsiderThumb {
-    border: 3px solid $newsmax-primary;
+    border: 3px solid $brand-primary;
     width: 53px;
     height: 53px;
 }
 
 .nmModuleHead {
-    border-color: $module-color;
+    border-color: $brand-module;
     margin-bottom: 10px;   
-    background-color: $module-color;
-   .nmModuleHeadLabel{
-    @include head-style($module-color);
-    
-}
+    background-color: $brand-module;
+  
+    .nmModuleHeadLabel{
+        @include head-style($brand-module);
+    }
 }
 @media (min-width: 480px){
-.nmModuleHead {
-    background-color: #fff;
-}
+    .nmModuleHead {
+        background-color: #fff;
+    }
   .nmModuleHeadR {
-    @include slant($module-color)
+        @include slant($brand-module)
     }
 }
 
 
  // Large devices
-    @media (min-width: 992px){
+@media (min-width: 992px){
 
     .nmInsiderThumb {
-                width: 53px;
-                height: 53px;
-        }
+        width: 53px;
+        height: 53px;
+    }
     .nmInsiderContent {
         padding-left: 15px;
-        } 
+    } 
 }
 
         

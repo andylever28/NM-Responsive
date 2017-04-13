@@ -1,47 +1,15 @@
-$serif: Georgia,'Times New Roman',Times,Serif;
-$sans-serif: Helvetica, Arial, Sans-serif;
-$border-size: 6px solid;
-$newsmax-primary: #295AAB;
-$newsmax-secondary: #c32620;
-$spacer-line: 1px solid #dfdfe7;
-$world-color: #AA65AA;
-$finance-color: #EBA100;
-$health-color: #57A1B1;
-$module-color: #8EBFE0;
-$special-head-color: #C4321E;
-@mixin slant($border-color) {
-    float: left;
-    border: 30px solid $border-color; 
-    border-top: 30px solid #fff; 
-    border-right: 30px solid #fff; 
-    border-bottom: 0; 
-    height: 0; 
-    width: 0; 
-}
-@mixin head-style($color){
-    float: left;
-    background-color: $color;
-    color: #fff;
-    height:30px;
-    box-sizing:border-box;
-    padding: 5px;
-}
-
-
-
+@import 'variables';
+@import 'mixins';
+@import 'scaffolding';
 
 .signupFormWrapper {
     margin: 0px;
     padding: 10px 0;
 
-    .form-control {
-        border-radius: 0px;
-        height: 30px;
-    }
-
     .form-group {
         margin-bottom: 10px;
     }
+
     label {
         padding-right: 0px;
         font-size: 11px;
@@ -55,8 +23,8 @@ $special-head-color: #C4321E;
         border-radius: 0px;
         height: 30px;
         padding: 0 6px;
-        font-family: $sans-serif;
-        background-color: $newsmax-secondary;
+        font-family: $font-family-base;
+        background-color: $brand-secondary;
         font-weight: bold;
     }
 
@@ -74,41 +42,44 @@ $special-head-color: #C4321E;
 
     .signupBox {
         padding-top: 10px;
-        border: 3px solid $newsmax-primary;
+        border: 3px solid $brand-primary;
         border-top: none;
     }
 }
 
 .nmEmailHeadLabel { 
-    background-color: $newsmax-primary;
-    }
+    background-color: $brand-primary;
+}
 
 @media (min-width: 480px) {
-   .nmEmailHead {
-    border-color: $newsmax-primary;
+   
+    .nmEmailHead {
+    border-color: $brand-primary;
 
    .nmEmailHeadLabel {
-    @include head-style($newsmax-primary);
+    @include head-style($brand-primary);
         a {
             font-size: 18px;
         }
 }
   .nmEmailHeadR {
-    @include slant($newsmax-primary)
+    @include slant($brand-primary)
     }
 }
 
 }
 
 /* Large devices */
-    @media (min-width: 992px){
+@media (min-width: 992px){
 
-.signupFormWrapper {
+    .signupFormWrapper {
         .form-group {
             padding: 0px;
         }
+        
         .nmSignUpButtonCont {
             margin-top: 0px;
+            
             input {
                 width: 60px; 
                 text-align: left;
@@ -121,8 +92,8 @@ $special-head-color: #C4321E;
         }
 
         button {
-        text-align: left;
-        font-size: 11px;
-    }
+            text-align: left;
+            font-size: 11px;
+        }
     }
 }

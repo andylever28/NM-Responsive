@@ -3,24 +3,31 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import 'variables';
+@import 'mixins';
+@import 'scaffolding';
 
-$serif: Georgia,'Times New Roman',Times,Serif;
-$sans-serif: Helvetica, Arial, Sans-serif;
-$border-size: 6px solid;
-$newsmax-primary: #295AAB;
-$newsmax-secondary: #c32620;
-$spacer-line: 1px solid #dfdfe7;
-$world-color: #AA65AA;
-$finance-color: #EBA100;
-$health-color: #57A1B1;
 
 /* main CSS */
+
+@media (max-width: 480px) {
+    .no-padding-xs {
+    padding: 0;
+}
+    
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  font-family: $serif;
+  font-family: $font-family-serif;
+  background-color: #F5F8FA;
 }
 
+.container {
+    background-color: white;
+    margin-top: -20px;
+}
 #nmLeftColumn,
 #nmRightColumn {
 	margin-top: 23px;
@@ -30,22 +37,9 @@ body {
     padding-top: 21px;
 }
 
-
-.nmMoreSection {
-	margin: 10px 0 0px 0;
-	padding-top: 10px;
-	
-	a {
-		color: $newsmax-primary;
-		font-size: 12px;
-		font-weight: bold;
-		font-family: $sans-serif;
-		padding: 10px;
-	}
-}
-
-.nothumb {
-    border-top: $spacer-line;
+.form-control {
+        border-radius: 0px;
+        height: 30px;
 }
 /* allows columns in rows to be set equal*/
 .row-eq-height {
@@ -114,6 +108,7 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

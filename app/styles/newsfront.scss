@@ -1,47 +1,23 @@
-$serif: Georgia,'Times New Roman',Times,Serif;
-$sans-serif: Helvetica, Arial, Sans-serif;
-$border-size: 6px solid;
-$newsmax-primary: #295AAB;
-$newsmax-secondary: #c32620;
-$spacer-line: 1px solid #dfdfe7;
-$world-color: #AA65AA;
-$finance-color: #EBA100;
-$health-color: #57A1B1;
-$module-color: #8EBFE0;
-$special-head-color: #C4321E;
-@mixin slant($border-color) {
-    float: left;
-    border: 30px solid $border-color; 
-    border-top: 30px solid #fff; 
-    border-right: 30px solid #fff; 
-    border-bottom: 0; 
-    height: 0; 
-    width: 0; 
-}
-@mixin head-style($color){
-    float: left;
-    background-color: $color;
-    color: #fff;
-    height:30px;
-    box-sizing:border-box;
-    padding: 5px;
-}
+@import 'variables';
+@import 'mixins';
+@import 'scaffolding';
+
+
 .nmLeadStoryHead {
     h2 {
-          margin: 0px;
-          font-size:28px;
-      }
+        margin: 0px;
+        font-size:28px;
+    }
 }
 
 .nmNewsfrontHead {
     h2 {
            margin: 0px;
            font-size:20px;
-       }
+    }
 }
 
-.nmNewsfrontLead,
-.nmNewsfrontStory {
+.nmNewsfrontLead, .nmNewsfrontStory {
    border-bottom: $spacer-line;
    padding: 15px 0;   
    margin: 0 1px;
@@ -51,14 +27,9 @@ $special-head-color: #C4321E;
    }
 }
 
-.nmNewsfrontSummary {
-    color: #666666;
-}
-
-.nmNewsfrontSummary,
-.nmLeadStorySummary {
+.nmNewsfrontSummary, .nmLeadStorySummary {
     a {
-      color: $newsmax-secondary
+      color: $brand-secondary
     }
 
     div {
@@ -66,56 +37,76 @@ $special-head-color: #C4321E;
     }
 }
 
+.nmNewsfrontSummary {
+    color: #666666;
+}
+
 
 .nmSectionLinks {
-    color: $newsmax-secondary;
+    color: $brand-secondary;
     list-style-type: square;
     font-size: 16px;
     margin-top: 10px;
+
     li {
-           margin-bottom: 10px;
+        margin-bottom: 10px;
+        
         a {
           color: black;
-       
         }
     } 
-
 }
 
 #nmFinanceLabel {
-    border-color: $finance-color;
+    border-color: $brand-money;
 
     .nmSectionHeadLabel{
-        background-color: $finance-color;
+        background-color: $brand-money;
     }
 }
 #nmWorldLabel {
-    border-color: $world-color;
+    border-color: $brand-world;
     
     .nmSectionHeadLabel{
-        background-color: $world-color;
+        background-color: $brand-world;
     }
 }
 #nmHealthLabel {
-   border-color: $health-color;
+   border-color: $brand-health;
     
     .nmSectionHeadLabel{
-        background-color: $health-color;
+        background-color: $brand-health;
     }
+}
+
+.nmMoreSection {
+	margin: 10px 0 0px 0;
+	padding-top: 10px;
+	
+	a {
+		color: $brand-primary;
+		font-size: 12px;
+		font-weight: bold;
+		font-family: $font-family-base;
+		padding: 10px;
+	}
+}
+
+.nothumb {
+    border-top: $spacer-line;
 }
 @media (min-width: 480px){
 
   #nmFinanceLabel .nmSectionHeadR {
-    @include slant($finance-color)
+    @include slant($brand-money)
     }
 
-
     #nmWorldLabel  .nmSectionHeadR {
-        @include slant($world-color)
+        @include slant($brand-world)
         }
 
    #nmHealthLabel .nmSectionHeadR {
-        @include slant($health-color)
+        @include slant($brand-health)
     }
 }
 .smallLead {
@@ -126,7 +117,7 @@ $special-head-color: #C4321E;
 @media (min-width: 768px) {
     .nmLeadStoryThumb,
     .nmNewsfrontThumb {
-        border-left: $border-size $newsmax-secondary;
+        border-left: $border-size $brand-secondary;
     }
 
     .nmSectionLinks {
@@ -134,10 +125,10 @@ $special-head-color: #C4321E;
     }
 
     .financeThumb {
-        border-left: $border-size $finance-color;
+        border-left: $border-size $brand-money;
     }
 
     .healthThumb {
-        border-left: $border-size $health-color;
+        border-left: $border-size $brand-health;
     }
 }

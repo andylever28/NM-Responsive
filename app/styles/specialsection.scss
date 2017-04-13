@@ -1,45 +1,20 @@
-$serif: Georgia,'Times New Roman',Times,Serif;
-$sans-serif: Helvetica, Arial, Sans-serif;
-$border-size: 6px solid;
-$newsmax-primary: #295AAB;
-$newsmax-secondary: #c32620;
-$spacer-line: 1px solid #dfdfe7;
-$world-color: #AA65AA;
-$finance-color: #EBA100;
-$health-color: #57A1B1;
-$module-color: #8EBFE0;
-$special-head-color: #C4321E;
-@mixin slant($border-color) {
-    float: left;
-    border: 30px solid $border-color; 
-    border-top: 30px solid #fff; 
-    border-right: 30px solid #fff; 
-    border-bottom: 0; 
-    height: 0; 
-    width: 0; 
-}
-@mixin head-style($color){
-    float: left;
-    background-color: $color;
-    color: #fff;
-    height:30px;
-    box-sizing:border-box;
-    padding: 5px;
-}
+@import 'variables';
+@import 'mixins';
+@import 'scaffolding';
+
 .nmSectionHead {
     margin-top: 20px;
-    border-bottom: 4px solid $newsmax-primary;
+    border-bottom: 4px solid $brand-primary;
     float: left;
     width: 100%;
+
     a {
-        font-family: $sans-serif;
+        font-family: $font-family-base;
         color: white;
         font-size: 20px;
         font-weight: bold;
     }
  }
-
-
 
 .nmSpecialSectionHeadline h2 {
     font-size: 24px;
@@ -50,7 +25,7 @@ $special-head-color: #C4321E;
     padding-left: 0px;
     margin-left: 16px;
     list-style-type: square;
-    color: $newsmax-secondary;
+    color: $brand-secondary;
 
     li {
         font-size: 18px;
@@ -62,59 +37,60 @@ $special-head-color: #C4321E;
 }
 
 .nmSpecialSection {
-        margin-top: 15px;
-    }
+    margin-top: 15px;
+}
 
 .nmSpecialHeadLabel {
-    background-color: $special-head-color;
+    background-color: $brand-special;
     padding: 5px;
 }
 
 .nmSectionHeadLabel {
-    background-color: $newsmax-primary;
+    background-color: $brand-primary;
     padding: 5px;
 }
 
 .nmSpecialHead {
-    border-color: $special-head-color;
+    border-color: $brand-special;
 }
 
 
 @media (min-width: 480px) {
     
-
     .nmSpecialHeadLabel,
     .nmSectionHeadLabel {
-       @include head-style($special-head-color)
+       @include head-style($brand-special)
     }
 
     .nmSectionHeadLabel {
-        background-color: $newsmax-primary;
+        background-color: $brand-primary;
     }
 
     .nmSpecialHeadR,
     .nmSectionHeadR {
-       @include slant($special-head-color)
+       @include slant($brand-special)
     }
 
     .nmSectionHeadR {
-        @include slant($newsmax-primary)
+        @include slant($brand-primary)
     }
 }
 // Medium devices
 @media (min-width: 768px) {
-    #nmSpecialSectionThumb {
-        border-left: $border-size $newsmax-secondary;
+   
+     #nmSpecialSectionThumb {
+        border-left: $border-size $brand-secondary;
     }
 }
 // Large devices
 @media (min-width: 992px) {
+    
     .nmSectionHead a {
         font-size: 22px;
     }
 
     .nmSpecialLinks li a {
-        font-family: $sans-serif;
+        font-family: $font-family-base;
         font-size: 15px;
     }
 }

@@ -2,6 +2,12 @@
 @import 'mixins';
 @import 'scaffolding';
 
+.header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: none;
+    margin-bottom: 5px;
+}
 
 nav.site-navbar {
 	position: absolute;
@@ -226,6 +232,10 @@ nav.site-navbar ul.nav-section.active a {
     padding: 10px;
 }
 
+.toggle-menu {
+    text-align: center;
+}
+
 .toggle-menu a, .toggle-menu a:hover {
     color: $gray-base;
 }
@@ -238,6 +248,17 @@ nav.site-navbar ul.nav-section.active a {
     color: $brand-secondary;
 }
 
+.toggle-menu .fa-bars {
+    font-size: 2em;
+}
+
+.nms-nm-tv {
+    background-image: url('/images/nmx-mobile.png');
+    height: 34px;
+    width: 34px;
+    background-position: 0 -300px;
+    background-size: 800px 1000px;
+}
 .tv-menu a, .tv-menu a:hover {
     color: $gray-base;
     text-decoration: none;
@@ -251,18 +272,31 @@ nav.site-navbar ul.nav-section.active a {
     width: 50%;
     margin: 0 auto;
 }
+
+.tv-descriptor.text-center {
+        margin-top: 5px;
+}
 @media (min-width: $screen-sm) {
 	.toggle-menu .fa-bars, .toggle-menu .fa-times  {
 		font-size: 3em;
 	}
 
 	.toggle-menu .menu-descriptor {
-			font-size: .9em;
+		font-size: .9em;
 	}
 
 	.tv-menu .tv-descriptor {
-			font-size: .9em;
+		font-size: .9em;
 	}
+
+    .nms-nm-tv {
+        margin-top: 5px;
+        height: 48px;
+        width: 48px;
+        background-position: -300px -300px;
+    }
+
+    
 }
 
 .fa-facebook-square {
@@ -279,4 +313,151 @@ nav.site-navbar ul.nav-section.active a {
 
 .fa-envelope-square, .social-share small {
     color: $gray-lighter-dark;
+}
+
+@media (min-width: $screen-md) {
+   
+    .nav-button {
+        display: block;
+        background-repeat: no-repeat;
+        background-image: $sprite-sheet;
+        height: 39px;
+        width: 103px;
+        margin: 0 auto;
+    }
+
+    .newsmax_a { 
+        background-position: 0 -52px;
+        &:hover {
+            background-position: 0 0px;
+        }
+    }
+
+    .tv_a {
+        background-position: -113px 0;
+        &:hover{
+            background-position: -113px -52px;
+        }
+    }
+
+    .health_a {
+        background-position: -339px 0;
+        &:hover {
+        background-position: -339px -52px;
+        }
+    }
+
+    .finance_a {
+        background-position: -226px 0;
+        &:hover {
+        background-position: -226px -52px;
+        }
+    }
+
+    .world_a {
+        background-position: -452px 0;
+        &:hover {
+        background-position: -452px -52px;
+
+        }
+    }
+
+    #nmNewsmaxLogo {
+        display: block;
+        background-image: $sprite-sheet;
+        background-repeat: no-repeat;
+        background-position: -35px -104px;
+        width: 310px;
+        height: 85px;
+        margin: 20px auto 0;
+    }
+
+    .nav-date {
+        margin-top: 20px;
+        #nmTodaysDate {
+            font-family: $font-family-serif;
+            font-size: $font-size-breaking;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .col-xs-6 {
+            padding-left: 0px;
+        }
+
+        .nmSearchCont {
+            float: right;
+            width: 200px;
+        }
+        .nmSearchInput {
+            
+        }
+
+        .nmSearchBtn {
+            border-radius: 0px;
+            height: 30px;
+            padding: 0 12px;
+        }
+    }
+
+    .nmMainNav-row {
+        margin-top: 15px;
+        .col-xs-12 {
+            padding-left: 0px;
+        }
+        #nmMainNav  {
+            display: block;
+            height: 48px;
+            padding: 10px 0;
+            border-top: 1px solid $brand-primary;
+            border-bottom: 1px solid $brand-primary;
+        }
+
+        #nmMainNav ul {
+            list-style-type: none;
+            list-style-position: outside;
+            height: 35px;
+            padding: 0px;
+           
+        }
+
+        #nmMainNav ul li {
+            float: left;
+        }
+
+        #nmMainNav ul li a {
+            display: block;
+            color: $brand-primary;
+            font-size: 13px;
+            font-weight: bold;
+            background-color: $white-base;
+            font-family: $font-family-base;
+            padding: 5px 9px;
+            text-decoration: none;
+            &:hover {
+                background-color: $brand-primary;
+                color: $white-base;
+            }
+        }
+
+        .nmMainNavSep {
+            margin: 0 1px;
+            float: left;
+            background-image: url("http://cdn.newsmax.com/App_Themes/NewsmaxNew/images/spriteVertBkg.gif");
+            background-position: -1325px 0;
+            background-repeat: repeat-y;
+            width: 3px;
+            height: 25px;
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .nmMainNav-row {
+
+        #nmMainNav ul li a {
+            font-size: 14px;
+            padding: 5px 15px;
+        }
+    }
 }
